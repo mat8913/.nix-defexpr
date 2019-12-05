@@ -8,4 +8,6 @@ rec {
 
   passman-cli = nixpkgs.haskell.lib.doJailbreak (nixpkgs.haskellPackages.passman-cli.override {inherit passman-core;});
 
+  myanimelist-export = nixpkgs.haskell.lib.doJailbreak (nixpkgs.haskell.lib.markUnbroken nixpkgs.haskellPackages.myanimelist-export);
+
 }
