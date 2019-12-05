@@ -6,4 +6,6 @@ rec {
 
   passman-core = nixpkgs.haskell.lib.doJailbreak nixpkgs.haskellPackages.passman-core;
 
+  passman-cli = nixpkgs.haskell.lib.doJailbreak (nixpkgs.haskellPackages.passman-cli.override {inherit passman-core;});
+
 }
