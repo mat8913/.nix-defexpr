@@ -16,6 +16,8 @@ rec {
     inherit (nixpkgs.darwin.apple_sdk.frameworks) Cocoa CoreMedia;
   };
 
+  youtubeDL-3_2 = nixpkgs.youtubeDL.override {ffmpeg_4 = ffmpeg-3_2;};
+
   gallium-packages = nixpkgs.buildEnv {
     name = "gallium-packages";
     paths = [
