@@ -12,6 +12,10 @@ rec {
 
   twitch-chatlog = (nixpkgs.callPackage ./twitch-chatlog {}).twitch-chatlog;
 
+  ffmpeg-3_2 = nixpkgs.callPackage ./ffmpeg-3.2 {
+    inherit (nixpkgs.darwin.apple_sdk.frameworks) Cocoa CoreMedia;
+  };
+
   gallium-packages = nixpkgs.buildEnv {
     name = "gallium-packages";
     paths = [
