@@ -10,6 +10,8 @@ rec {
 
   myanimelist-export = nixpkgs.haskell.lib.doJailbreak (nixpkgs.haskell.lib.markUnbroken nixpkgs.haskellPackages.myanimelist-export);
 
+  twitch-chatlog = (nixpkgs.callPackage ./twitch-chatlog {}).twitch-chatlog;
+
   gallium-packages = nixpkgs.buildEnv {
     name = "gallium-packages";
     paths = [
