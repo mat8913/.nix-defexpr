@@ -1,4 +1,9 @@
-rec {
+{ ... }:
+
+let pkgs = rec {
+
+  inherit pkgs;
+  inherit (nixpkgs) runCommand bashInteractive;
 
   nixpkgs = import ./channels/nixos {};
 
@@ -37,4 +42,6 @@ rec {
     extraOutputsToInstall = [ "man" "doc" ];
   };
 
-}
+};
+
+in pkgs
