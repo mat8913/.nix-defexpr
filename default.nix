@@ -23,6 +23,8 @@ let pkgs = rec {
 
   youtubeDL-3_2 = nixpkgs.youtubeDL.override {ffmpeg_4 = ffmpeg-3_2;};
 
+  tubeup = nixpkgs.callPackage ./tubeup {};
+
   gallium-packages = nixpkgs.buildEnv {
     name = "gallium-packages";
     paths = [
