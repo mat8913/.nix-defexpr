@@ -37,6 +37,7 @@ let pkgs = rec {
       nixpkgs.brave
       git-annex-remote-rclone
       (nixpkgs.pass.withExtensions (exts: [exts.pass-otp]))
+      (nixpkgs.callPackage ./units/syncthing {})
 
       passman-cli
       myanimelist-export
