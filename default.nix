@@ -35,6 +35,11 @@ let pkgs = rec {
     cp ${my-gitconfig-text} $out/etc/gitconfig
   '';
 
+  my-alacrittyconf = nixpkgs.writeTextDir "/etc/alacritty.toml" ''
+    [hints]
+    enabled = []
+  '';
+
   my-scripts = nixpkgs.callPackage ./my-scripts { };
 
   my-swayconf = nixpkgs.callPackage ./my-swayconf { };
@@ -112,6 +117,7 @@ let pkgs = rec {
       my-vim
       my-profile
       my-gitconfig
+      my-alacrittyconf
       my-swayconf
       my-scripts
 
