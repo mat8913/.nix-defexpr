@@ -1,0 +1,44 @@
+diff --git a/include/sway/tree/container.h b/include/sway/tree/container.h
+index 4608b8ac..88b9dc29 100644
+--- a/include/sway/tree/container.h
++++ b/include/sway/tree/container.h
+@@ -259,6 +259,8 @@ void container_end_mouse_operation(struct sway_container *container);
+ void container_set_fullscreen(struct sway_container *con,
+ 		enum sway_fullscreen_mode mode);
+ 
++void container_request_fullscreen(struct sway_container *con, bool enable);
++
+ /**
+  * Convenience function.
+  */
+diff --git a/sway/desktop/xdg_shell.c b/sway/desktop/xdg_shell.c
+index fdfa7b65..82a25762 100644
+--- a/sway/desktop/xdg_shell.c
++++ b/sway/desktop/xdg_shell.c
+@@ -402,7 +402,7 @@ static void handle_request_fullscreen(struct wl_listener *listener, void *data)
+ 		}
+ 	}
+ 
+-	container_set_fullscreen(container, req->fullscreen);
++	container_request_fullscreen(container, req->fullscreen);
+ 
+ 	arrange_root();
+ 	transaction_commit_dirty();
+diff --git a/sway/tree/container.c b/sway/tree/container.c
+index 62bff1ea..b23ff28f 100644
+--- a/sway/tree/container.c
++++ b/sway/tree/container.c
+@@ -1364,6 +1364,13 @@ void container_set_fullscreen(struct sway_container *con,
+ 	}
+ }
+ 
++void container_request_fullscreen(struct sway_container *con, bool enable) {
++	set_fullscreen(con, enable);
++	if (con->pending.workspace) {
++		arrange_workspace(con->pending.workspace);
++	}
++}
++
+ struct sway_container *container_toplevel_ancestor(
+ 		struct sway_container *container) {
+ 	while (container->pending.parent) {

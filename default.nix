@@ -1,11 +1,21 @@
 { ... }:
 
-let pkgs = rec {
+let
+
+packageOverrides = pkgs: rec {
+  sway-unwrapped = pkgs.sway-unwrapped.overrideAttrs (
+    finalAttrs: previousAttrs: {
+      patches = previousAttrs.patches ++ [ ./sway-patches/inhibit-fullscreen.patch ];
+    }
+  );
+};
+
+pkgs = rec {
 
   inherit pkgs;
   inherit (nixpkgs) runCommand bashInteractive;
 
-  nixpkgs = import ./channels/nixos {};
+  nixpkgs = import ./channels/nixos { config = { packageOverrides = packageOverrides; }; };
 
   my-profile-text = nixpkgs.writeText "my-profile" ''
     export GTK_THEME=Adwaita:dark
