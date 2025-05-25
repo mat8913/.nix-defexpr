@@ -7,42 +7,113 @@ let pkgs = rec {
 
   nixpkgs = import ./channels/nixos {};
 
-  git-annex-remote-rclone = nixpkgs.callPackage ./git-annex-remote-rclone {};
+  my-profile-text = nixpkgs.writeText "my-profile" ''
+    export GTK_THEME=Adwaita:dark
+  '';
 
-  passman-core = nixpkgs.haskell.lib.doJailbreak nixpkgs.haskellPackages.passman-core;
+  my-profile = nixpkgs.runCommand "profile" { } ''
+    mkdir -p $out/etc/profile.d
+    cp ${my-profile-text} $out/etc/profile.d/my-profile.sh
+  '';
 
-  passman-cli = nixpkgs.haskell.lib.doJailbreak (nixpkgs.haskellPackages.passman-cli.override {inherit passman-core;});
+  my-gitconfig-text = nixpkgs.writeText "my-gitconfig" ''
+    [user]
+      name = Matthew Harm Bekkema
+      email = id@mbekkema.name
+    [push]
+      default = simple
+    [core]
+      autocrlf = off
+    [pull]
+      ff = only
+  '';
 
-  myanimelist-export = nixpkgs.haskell.lib.doJailbreak (nixpkgs.haskell.lib.markUnbroken nixpkgs.haskellPackages.myanimelist-export);
+  my-gitconfig = nixpkgs.runCommand "my-gitconfig" { } ''
+    mkdir -p $out/etc/
+    cp ${my-gitconfig-text} $out/etc/gitconfig
+  '';
 
-  twitch-chatlog = (nixpkgs.callPackage ./twitch-chatlog {}).twitch-chatlog;
+  my-scripts = nixpkgs.callPackage ./my-scripts { };
 
-  ffmpeg-3_2 = nixpkgs.callPackage ./ffmpeg-3.2 {
-    inherit (nixpkgs.darwin.apple_sdk.frameworks) Cocoa CoreMedia;
+  my-swayconf = nixpkgs.callPackage ./my-swayconf { };
+
+  runsway-text = nixpkgs.writeText "runsway-text" ''
+    #!/bin/sh
+
+    exec systemd-run --user --scope -u sway -G -- sway --config "$HOME"/.nix-profile/etc/my-sway.conf
+  '';
+
+  runsway = nixpkgs.runCommand "runsway" { } ''
+    mkdir -p $out/bin
+    cp ${runsway-text} $out/bin/runsway
+    chmod +x $out/bin/runsway
+  '';
+
+  my-vim = nixpkgs.vim-full.customize {
+    vimrcConfig.customRC = ''
+      syntax on
+      set directory=~/.vim/tmp//  " Trailing // is important, see :help directory
+      set number
+      set hlsearch
+      imap <Tab> <Esc>
+
+      set autoindent
+      set noexpandtab
+
+      set wildmenu
+      set wildmode=longest:full,full
+
+      set list
+      set listchars=tab:▸\ ,trail:.
+
+      nore ; :
+      nore , ;
+
+      set background=dark
+      hi SpellBad cterm=underline
+
+      set laststatus=2
+      set noshowmode
+
+      autocmd FileType gitcommit setlocal textwidth=72 spell
+      autocmd FileType cabal setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+      autocmd FileType typescript setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+      autocmd FileType nix setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    '';
+
+    vimrcConfig.packages.my-vim-package = with nixpkgs.vimPlugins; {
+      start = [
+        vim-wayland-clipboard
+      ];
+    };
   };
 
-  youtubeDL-3_2 = nixpkgs.youtubeDL.override {ffmpeg_4 = ffmpeg-3_2;};
-
-  tubeup = nixpkgs.callPackage ./tubeup {};
-
-  gallium-packages = nixpkgs.buildEnv {
-    name = "gallium-packages";
+  iron-packages = nixpkgs.buildEnv {
+    name = "iron-packages";
     paths = [
-      nixpkgs.gitAndTools.git-annex
-      nixpkgs.gitAndTools.gitRemoteGcrypt
+      nixpkgs.mpv
+      nixpkgs.alacritty
+      nixpkgs.blueman
+      nixpkgs.git
       nixpkgs.gnupg
       nixpkgs.mpv
-      nixpkgs.powerline-fonts
-      nixpkgs.taskwarrior
-      nixpkgs.brave
-      git-annex-remote-rclone
-      (nixpkgs.pass.withExtensions (exts: [exts.pass-otp]))
-      (nixpkgs.callPackage ./units/syncthing {})
-      (nixpkgs.callPackage ./units/keybase {})
-      (nixpkgs.callPackage ./units/kbfs {})
+      nixpkgs.pavucontrol
+      nixpkgs.pinentry-qt
+      nixpkgs.sway
+      nixpkgs.wl-clipboard
+      nixpkgs.xclip
+      nixpkgs.yt-dlp
+      nixpkgs.aria2
+      nixpkgs.wofi
+      nixpkgs.pass-wayland
 
-      passman-cli
-      myanimelist-export
+      my-vim
+      my-profile
+      my-gitconfig
+      my-swayconf
+      my-scripts
+
+      runsway
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
