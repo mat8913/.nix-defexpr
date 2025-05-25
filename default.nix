@@ -26,6 +26,8 @@ let pkgs = rec {
       autocrlf = off
     [pull]
       ff = only
+    [safe]
+      directory = /etc/nixos/.git
   '';
 
   my-gitconfig = nixpkgs.runCommand "my-gitconfig" { } ''
