@@ -26,6 +26,19 @@ pkgs = rec {
     cp ${my-profile-text} $out/etc/profile.d/my-profile.sh
   '';
 
+  my-bashrc = nixpkgs.writeTextDir "/etc/bashrc.d/my-bashrc.sh" ''
+    function r {
+      local temp_file="$(mktemp -p /run/user/1000 -t "ranger_cd.XXXXXXXXXX")"
+      ranger --choosedir="$temp_file" "$@"
+      return_value="$?"
+      if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
+        cd -- "$chosen_dir"
+      fi
+      rm -f -- "$temp_file"
+      return "$return_value"
+    }
+  '';
+
   my-gitconfig-text = nixpkgs.writeText "my-gitconfig" ''
     [user]
       name = Matthew Harm Bekkema
@@ -123,9 +136,11 @@ pkgs = rec {
       nixpkgs.aria2
       nixpkgs.wofi
       nixpkgs.pass-wayland
+      nixpkgs.ranger
 
       my-vim
       my-profile
+      my-bashrc
       my-gitconfig
       my-alacrittyconf
       my-swayconf
