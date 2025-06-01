@@ -67,6 +67,8 @@ pkgs = rec {
 
   my-swayconf = nixpkgs.callPackage ./my-swayconf { };
 
+  my-statusbar = nixpkgs.callPackage ./my-statusbar { };
+
   runsway-text = nixpkgs.writeText "runsway-text" ''
     #!/bin/sh
 
@@ -145,6 +147,7 @@ pkgs = rec {
       my-gitconfig
       my-alacrittyconf
       my-swayconf
+      my-statusbar
       my-scripts
 
       runsway
