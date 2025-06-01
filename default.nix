@@ -140,6 +140,7 @@ pkgs = rec {
       nixpkgs.wofi
       nixpkgs.pass-wayland
       nixpkgs.ranger
+      nixpkgs.adwaita-icon-theme
 
       my-vim
       my-profile
