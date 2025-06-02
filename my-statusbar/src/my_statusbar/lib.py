@@ -32,10 +32,15 @@ def block_mem():
     output_block(f'Mem: {used:.1%}')
 
 
+def block_disk():
+    output_block(f'Disk: {psutil.disk_usage("/").percent}%')
+
+
 def main():
     blocks = [
         block_cpu,
         block_mem,
+        block_disk,
         block_date,
     ]
     output_header()
