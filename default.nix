@@ -133,6 +133,7 @@ pkgs = rec {
       nixpkgs.pavucontrol
       nixpkgs.pinentry-qt
       nixpkgs.sway
+      nixpkgs.swaylock-effects
       nixpkgs.wl-clipboard
       nixpkgs.xclip
       nixpkgs.yt-dlp
