@@ -63,6 +63,20 @@ pkgs = rec {
     enabled = []
   '';
 
+  my-xdg-desktop-portals-conf = nixpkgs.writeTextDir "/etc/xdg-desktop-portals.conf" ''
+    [preferred]
+    default=gtk
+    org.freedesktop.impl.portal.Inhibit=none
+  '';
+
+  my-installconf = nixpkgs.writeShellScriptBin "installconf" ''
+    mkdir -p ~/.config/alacritty
+    ln -sf ../../.nix-profile/etc/alacritty.toml ~/.config/alacritty/
+
+    mkdir -p ~/.config/xdg-desktop-portal
+    ln -sf ../../.nix-profile/etc/xdg-desktop-portals.conf ~/.config/xdg-desktop-portal/portals.conf
+  '';
+
   my-scripts = nixpkgs.callPackage ./my-scripts { };
 
   my-swayconf = nixpkgs.callPackage ./my-swayconf { };
@@ -149,9 +163,11 @@ pkgs = rec {
       my-bashrc
       my-gitconfig
       my-alacrittyconf
+      my-xdg-desktop-portals-conf
       my-swayconf
       my-statusbar
       my-scripts
+      my-installconf
 
       runsway
     ];
