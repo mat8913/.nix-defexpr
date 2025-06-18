@@ -1,0 +1,18 @@
+[package]
+name = "my-statusbar"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = "0.4.41"
+psutil = "5.2.0"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+serde_with = "3.13.0"
+wl-clipboard-rs = "0.9.2"
+
+[profile.release]
+panic = 'abort'
+
+[profile.dev]
+panic = 'abort'
