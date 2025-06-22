@@ -154,7 +154,7 @@ pkgs = rec {
       nixpkgs.yt-dlp
       nixpkgs.aria2
       nixpkgs.wofi
-      nixpkgs.pass-wayland
+      (nixpkgs.pass-wayland.withExtensions (ext: with ext; [ pass-otp ]))
       nixpkgs.ranger
       nixpkgs.adwaita-icon-theme
 
