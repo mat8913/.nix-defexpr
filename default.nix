@@ -69,13 +69,35 @@ pkgs = rec {
     org.freedesktop.impl.portal.Inhibit=none
   '';
 
-  my-installconf = nixpkgs.writeShellScriptBin "installconf" ''
-    mkdir -p ~/.config/alacritty
-    ln -sf ../../.nix-profile/etc/alacritty.toml ~/.config/alacritty/
+  my-installconf = nixpkgs.stdenvNoCC.mkDerivation {
+    pname = "installconf";
+    version = "1";
 
-    mkdir -p ~/.config/xdg-desktop-portal
-    ln -sf ../../.nix-profile/etc/xdg-desktop-portals.conf ~/.config/xdg-desktop-portal/portals.conf
-  '';
+    src = nixpkgs.writeShellScriptBin "installconf" ''
+      mkdir -p ~/.config/alacritty
+      ln -sf ../../.nix-profile/etc/alacritty.toml ~/.config/alacritty/
+
+      mkdir -p ~/.config/xdg-desktop-portal
+      ln -sf ../../.nix-profile/etc/xdg-desktop-portals.conf ~/.config/xdg-desktop-portal/portals.conf
+
+      ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+      ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    '';
+
+    nativeBuildInputs = [
+      nixpkgs.wrapGAppsNoGuiHook
+    ];
+
+    buildInputs = [
+      nixpkgs.glib
+      nixpkgs.gsettings-desktop-schemas
+    ];
+
+    installPhase = ''
+      mkdir -p $out/
+      cp -r bin $out/
+    '';
+  };
 
   my-scripts = nixpkgs.callPackage ./my-scripts { };
 
