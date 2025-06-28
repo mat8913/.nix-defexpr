@@ -136,6 +136,14 @@ pkgs = rec {
     };
   };
 
+  # Remove /etc output to override with my own
+  my-swaync = nixpkgs.buildEnv {
+    name = "my-swaync";
+    paths = [ nixpkgs.swaynotificationcenter ];
+    extraOutputsToInstall = [ "man" "doc" ];
+    pathsToLink = [ "/bin" "/lib" "/share" ];
+  };
+
   iron-packages = nixpkgs.buildEnv {
     name = "iron-packages";
     paths = [
@@ -168,6 +176,7 @@ pkgs = rec {
       my-statusbar
       my-scripts
       my-installconf
+      my-swaync
 
       runsway
     ];

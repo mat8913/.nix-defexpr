@@ -1,5 +1,6 @@
 use crate::interface::{Block, ClickEvent, Module};
 use chrono::prelude::Local;
+use std::process::Command;
 
 pub struct DateTimeModule {}
 
@@ -15,10 +16,20 @@ impl Module for DateTimeModule {
         let formatted = datetime.format("%a %b %_d %Y %I:%M:%S%p").to_string();
 
         vec![Block {
+            name: Some("datetime".to_string()),
             full_text: formatted,
             ..Default::default()
         }]
     }
 
-    fn handle_click(&mut self, _event: &ClickEvent) {}
+    fn handle_click(&mut self, event: &ClickEvent) {
+        let name: Option<&str> = event.name.as_ref().map(|x| x.as_str());
+        if name != Some("datetime") {
+            return;
+        }
+
+        Command::new("swaync-client")
+            .args(["-t", "-sw"])
+            .status();
+    }
 }
