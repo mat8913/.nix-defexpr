@@ -117,6 +117,20 @@ pkgs = rec {
     chmod +x $out/bin/runsway
   '';
 
+  my-syncthing-service = nixpkgs.runCommand "my-syncthing-service" {} ''
+    mkdir -p $out/share/systemd/user/
+    cp ${nixpkgs.syncthing}/share/systemd/user/syncthing.service $out/share/systemd/user/
+    chmod 644 $out/share/systemd/user/syncthing.service
+    cat >> $out/share/systemd/user/syncthing.service <<EOF
+
+    [Service]
+    PrivateUsers=yes
+    ProtectHome=tmpfs
+    BindPaths=%h/Sync
+    BindPaths=%S/syncthing
+    EOF
+  '';
+
   my-vim = nixpkgs.vim-full.customize {
     vimrcConfig.customRC = ''
       syntax on
@@ -199,6 +213,7 @@ pkgs = rec {
       my-scripts
       my-installconf
       my-swaync
+      my-syncthing-service
 
       runsway
     ];
