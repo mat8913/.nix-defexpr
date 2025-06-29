@@ -131,6 +131,21 @@ pkgs = rec {
     EOF
   '';
 
+  reset-doc-permissions-script = nixpkgs.writeShellScriptBin "reset-doc-permissions" ''
+    for i in `${nixpkgs.flatpak}/bin/flatpak permissions documents | cut --delimiter='	' --fields=2 | sort -u`; do
+      ${nixpkgs.flatpak}/bin/flatpak permission-remove documents "$i"
+    done
+  '';
+
+  reset-doc-permissions-service = nixpkgs.writeTextDir "/share/systemd/user/reset-doc-permissions.service" ''
+    [Service]
+    ExecStart=${reset-doc-permissions-script}/bin/reset-doc-permissions
+    Type=oneshot
+
+    [Install]
+    WantedBy=default.target
+  '';
+
   my-vim = nixpkgs.vim-full.customize {
     vimrcConfig.customRC = ''
       syntax on
@@ -216,6 +231,7 @@ pkgs = rec {
       my-syncthing-service
 
       runsway
+      reset-doc-permissions-service
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
