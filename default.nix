@@ -217,6 +217,7 @@ pkgs = rec {
       nixpkgs.ranger
       nixpkgs.adwaita-icon-theme
       nixpkgs.imv
+      nixpkgs.gammastep
 
       my-vim
       my-profile
