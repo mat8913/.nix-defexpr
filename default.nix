@@ -8,6 +8,13 @@ packageOverrides = pkgs: rec {
       patches = previousAttrs.patches ++ [ ./sway-patches/inhibit-fullscreen.patch ];
     }
   );
+
+  aria2 = pkgs.aria2.overrideAttrs (
+    finalAttrs: previousAttrs: {
+      # TODO: include previousAttrs.patches
+      patches = [ ./aria-patches/remove-max-limit.patch ];
+    }
+  );
 };
 
 pkgs = rec {
