@@ -15,6 +15,13 @@ packageOverrides = pkgs: rec {
       patches = [ ./aria-patches/remove-max-limit.patch ];
     }
   );
+
+  ranger = pkgs.ranger.overrideAttrs (
+    finalAttrs: previousAttrs: {
+      # TODO: include previousAttrs.patches
+      patches = [ ./ranger-patches/fix-bulkrename.patch ];
+    }
+  );
 };
 
 pkgs = rec {
