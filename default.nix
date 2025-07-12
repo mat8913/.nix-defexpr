@@ -22,6 +22,14 @@ packageOverrides = pkgs: rec {
       patches = [ ./ranger-patches/fix-bulkrename.patch ];
     }
   );
+
+  mpv = pkgs.mpv-unwrapped.wrapper {
+    mpv = pkgs.mpv-unwrapped;
+
+    scripts = with pkgs.mpvScripts; [
+      mpris
+    ];
+  };
 };
 
 pkgs = rec {
@@ -217,7 +225,6 @@ pkgs = rec {
       nixpkgs.blueman
       nixpkgs.git
       nixpkgs.gnupg
-      nixpkgs.mpv
       nixpkgs.pavucontrol
       nixpkgs.pinentry-qt
       nixpkgs.sway
