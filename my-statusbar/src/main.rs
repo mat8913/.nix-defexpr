@@ -10,6 +10,7 @@ use crate::modules::*;
 pub mod input_handler;
 pub mod interface;
 pub mod modules;
+pub mod utils;
 
 #[derive(Debug)]
 enum Event {
@@ -22,6 +23,7 @@ fn main() {
         ClipModule::new(),
         PsutilModule::new(),
         DateTimeModule::new(),
+        AlertsModule::new(),
     ];
 
     let (send1, recv) = mpsc::sync_channel(0);

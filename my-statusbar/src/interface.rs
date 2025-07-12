@@ -12,6 +12,7 @@ pub struct ClickEvent {
 pub struct Block {
     pub full_text: String,
     pub name: Option<String>,
+    pub background: Option<String>,
 }
 
 pub trait Module {
