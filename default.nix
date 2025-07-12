@@ -146,7 +146,7 @@ pkgs = rec {
   '';
 
   reset-doc-permissions-script = nixpkgs.writeShellScriptBin "reset-doc-permissions" ''
-    for i in `${nixpkgs.flatpak}/bin/flatpak permissions documents | cut --delimiter='	' --fields=2 | sort -u`; do
+    for i in `${nixpkgs.flatpak}/bin/flatpak permissions documents | ${nixpkgs.coreutils}/bin/cut --delimiter='	' --fields=2 | ${nixpkgs.coreutils}/bin/sort -u`; do
       ${nixpkgs.flatpak}/bin/flatpak permission-remove documents "$i"
     done
   '';
