@@ -30,6 +30,7 @@ impl Module for DateTimeModule {
 
         Command::new("swaync-client")
             .args(["-t", "-sw"])
-            .status();
+            .status()
+            .unwrap();
     }
 }
