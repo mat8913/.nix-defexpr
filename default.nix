@@ -5,21 +5,19 @@ let
 packageOverrides = pkgs: rec {
   sway-unwrapped = pkgs.sway-unwrapped.overrideAttrs (
     finalAttrs: previousAttrs: {
-      patches = previousAttrs.patches ++ [ ./sway-patches/inhibit-fullscreen.patch ];
+      patches = (previousAttrs.patches or []) ++ [ ./sway-patches/inhibit-fullscreen.patch ];
     }
   );
 
   aria2 = pkgs.aria2.overrideAttrs (
     finalAttrs: previousAttrs: {
-      # TODO: include previousAttrs.patches
-      patches = [ ./aria-patches/remove-max-limit.patch ];
+      patches = (previousAttrs.patches or []) ++ [ ./aria-patches/remove-max-limit.patch ];
     }
   );
 
   ranger = pkgs.ranger.overrideAttrs (
     finalAttrs: previousAttrs: {
-      # TODO: include previousAttrs.patches
-      patches = [ ./ranger-patches/fix-bulkrename.patch ];
+      patches = (previousAttrs.patches or []) ++ [ ./ranger-patches/fix-bulkrename.patch ];
     }
   );
 
