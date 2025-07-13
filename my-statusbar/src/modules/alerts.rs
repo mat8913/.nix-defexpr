@@ -1,7 +1,17 @@
 use crate::interface::{Block, ClickEvent, Module};
 use crate::utils::RouteHandle;
 
-const EXPECTED_IFACE: &str = "wg0";
+const EXTERNAL_IFACE: &str = "wg0";
+const EXTERNAL_IPV4: [u8; 4] = [1, 1, 1, 1];
+const EXTERNAL_IPV6: [u8; 16] = [
+    0x26, 0x06, 0x47, 0x00, 0x47, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0x11,
+];
+
+const LOOPBACK_IFACE: &str = "lo";
+const LOOPBACK_IPV4: [u8; 4] = [127, 0, 0, 1];
+const LOOPBACK_IPV6: [u8; 16] = [
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01,
+];
 
 pub struct AlertsModule {
     route_handle: RouteHandle,
@@ -18,10 +28,34 @@ impl Module for AlertsModule {
     fn handle_tick(&mut self) -> Vec<Block> {
         let mut alerts: Vec<String> = Vec::new();
 
-        let iface = self.route_handle.get_default_route_iface_ipv4().unwrap();
+        // Sanity check
+        let iface = self
+            .route_handle
+            .get_route_iface_ipv4(&LOOPBACK_IPV4)
+            .unwrap();
+        assert_eq!(iface, LOOPBACK_IFACE);
 
-        if iface != EXPECTED_IFACE {
+        let iface = self
+            .route_handle
+            .get_route_iface_ipv4(&EXTERNAL_IPV4)
+            .unwrap();
+        if iface != EXTERNAL_IFACE {
             alerts.push(format!("ipv4 route: {}", iface));
+        }
+
+        // Sanity check
+        let iface = self
+            .route_handle
+            .get_route_iface_ipv6(&LOOPBACK_IPV6)
+            .unwrap();
+        assert_eq!(iface, LOOPBACK_IFACE);
+
+        let iface = self
+            .route_handle
+            .get_route_iface_ipv6(&EXTERNAL_IPV6)
+            .unwrap();
+        if iface != EXTERNAL_IFACE {
+            alerts.push(format!("ipv6 route: {}", iface));
         }
 
         alerts

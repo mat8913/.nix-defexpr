@@ -1,8 +1,8 @@
 use crate::utils::{MsgReader, MsgWriter};
 use anyhow::Result;
 use libc::{
-    AF_INET, IFLA_IFNAME, NLM_F_REQUEST, RTA_DST, RTA_OIF, RTM_F_LOOKUP_TABLE, RTM_GETLINK,
-    RTM_GETROUTE, RTM_NEWLINK,
+    AF_INET, AF_INET6, IFLA_IFNAME, NLM_F_REQUEST, RTA_DST, RTA_OIF, RTM_F_LOOKUP_TABLE,
+    RTM_GETLINK, RTM_GETROUTE, RTM_NEWLINK,
 };
 use netlink_sys::{Socket, protocols::NETLINK_ROUTE};
 
@@ -20,14 +20,20 @@ impl RouteHandle {
         Ok(ret)
     }
 
-    pub fn get_default_route_iface_ipv4(&mut self) -> Result<String> {
-        let oif = get_default_route_oif_ipv4(&mut self.socket)?;
+    pub fn get_route_iface_ipv4(&mut self, addr: &[u8; 4]) -> Result<String> {
+        let oif = get_route_oif_ipv4(&mut self.socket, addr)?;
+        let ifname = get_link_name_from_idx(&mut self.socket, oif)?;
+        Ok(ifname)
+    }
+
+    pub fn get_route_iface_ipv6(&mut self, addr: &[u8; 16]) -> Result<String> {
+        let oif = get_route_oif_ipv6(&mut self.socket, addr)?;
         let ifname = get_link_name_from_idx(&mut self.socket, oif)?;
         Ok(ifname)
     }
 }
 
-fn get_default_route_oif_ipv4(socket: &mut Socket) -> Result<u32> {
+fn get_route_oif_ipv4(socket: &mut Socket, addr: &[u8; 4]) -> Result<u32> {
     let mut msg = MsgWriter::new();
     let expected_len = 36;
     msg.write_u32("nlmsg_len", expected_len)?;
@@ -46,7 +52,64 @@ fn get_default_route_oif_ipv4(socket: &mut Socket) -> Result<u32> {
     msg.write_u32("rtm_flags", RTM_F_LOOKUP_TABLE)?;
     msg.write_u16("rta_len", 8)?;
     msg.write_u16("rta_type", RTA_DST)?;
-    msg.write_bytes("rta", &[1, 1, 1, 1])?;
+    msg.write_bytes("rta", addr)?;
+
+    let msg = msg.into_vec();
+    assert_eq!(msg.len(), expected_len as usize);
+
+    let n_sent = socket.send(&msg, 0)?;
+    assert_eq!(n_sent, msg.len());
+
+    let (reply_buf, _) = socket.recv_from_full()?;
+    let reply_len = reply_buf.len();
+    let mut reply = MsgReader::new(&reply_buf);
+    let nlmsg_len = reply.read_u32("nlmsg_len")?;
+    assert_eq!(reply_len, (nlmsg_len as usize));
+    reply.read_u16("nlmsg_type")?;
+    reply.read_u16("nlmsg_flags")?;
+    reply.read_u32("nlmsg_seq")?;
+    reply.read_u32("nlmsg_pid")?;
+    reply.read_u8("rtm_family")?;
+    reply.read_u8("rtm_dst_len")?;
+    reply.read_u8("rtm_src_len")?;
+    reply.read_u8("rtm_tos")?;
+    reply.read_u8("rtm_table")?;
+    reply.read_u8("rtm_protocol")?;
+    reply.read_u8("rtm_scope")?;
+    reply.read_u8("rtm_type")?;
+    reply.read_u32("rtm_flags")?;
+
+    loop {
+        let rta = read_rta(&mut reply)?;
+
+        if rta.rta_type == RTA_OIF {
+            let mut rta_reader = MsgReader::new(rta.rta);
+            let oif = rta_reader.read_u32("RTA_OIF")?;
+            return Ok(oif);
+        }
+    }
+}
+
+fn get_route_oif_ipv6(socket: &mut Socket, addr: &[u8; 16]) -> Result<u32> {
+    let mut msg = MsgWriter::new();
+    let expected_len = 48;
+    msg.write_u32("nlmsg_len", expected_len)?;
+    msg.write_u16("nlmsg_type", RTM_GETROUTE)?;
+    msg.write_u16("nlmsg_flags", NLM_F_REQUEST as u16)?;
+    msg.write_u32("nlmsg_seq", 0)?;
+    msg.write_u32("nlmsg_pid", 0)?;
+    msg.write_u8("rtm_family", AF_INET6 as u8)?;
+    msg.write_u8("rtm_dst_len", 128)?;
+    msg.write_u8("rtm_src_len", 0)?;
+    msg.write_u8("rtm_tos", 0)?;
+    msg.write_u8("rtm_table", 0)?;
+    msg.write_u8("rtm_protocol", 0)?;
+    msg.write_u8("rtm_scope", 0)?;
+    msg.write_u8("rtm_type", 0)?;
+    msg.write_u32("rtm_flags", 0)?;
+    msg.write_u16("rta_len", 20)?;
+    msg.write_u16("rta_type", RTA_DST)?;
+    msg.write_bytes("rta", addr)?;
 
     let msg = msg.into_vec();
     assert_eq!(msg.len(), expected_len as usize);
