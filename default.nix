@@ -125,6 +125,8 @@ pkgs = rec {
 
   my-statusbar = nixpkgs.callPackage ./my-statusbar { };
 
+  open-url-in = nixpkgs.callPackage ./open-url-in { };
+
   runsway-text = nixpkgs.writeText "runsway-text" ''
     #!/bin/sh
 
@@ -253,6 +255,7 @@ pkgs = rec {
 
       runsway
       reset-doc-permissions-service
+      open-url-in
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
