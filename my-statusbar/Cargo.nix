@@ -113,9 +113,9 @@ rec {
       };
       "anyhow" = rec {
         crateName = "anyhow";
-        version = "1.0.98";
+        version = "1.0.99";
         edition = "2018";
-        sha256 = "11ylvjdrcjs0q9jgk1af4r5cx1qppj63plxqkq595vmc24rjsvg1";
+        sha256 = "001icqvkfl28rxxmk99rm4gvdzxqngj5v50yg2bh3dzcvqfllrxh";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -151,18 +151,15 @@ rec {
       };
       "bitflags" = rec {
         crateName = "bitflags";
-        version = "2.9.1";
+        version = "2.9.2";
         edition = "2021";
-        sha256 = "0rz9rpp5wywwqb3mxfkywh4drmzci2fch780q7lifbf6bsc5d3hv";
+        sha256 = "0adahzd1i2kv86k0vzkaxdcw9zjm124x9698yp7qgmiimd2varba";
         authors = [
           "The Rust Project Developers"
         ];
         features = {
           "arbitrary" = [ "dep:arbitrary" ];
           "bytemuck" = [ "dep:bytemuck" ];
-          "compiler_builtins" = [ "dep:compiler_builtins" ];
-          "core" = [ "dep:core" ];
-          "rustc-dep-of-std" = [ "core" "compiler_builtins" ];
           "serde" = [ "dep:serde" ];
         };
         resolvedDefaultFeatures = [ "std" ];
@@ -213,9 +210,9 @@ rec {
       };
       "cc" = rec {
         crateName = "cc";
-        version = "1.2.29";
+        version = "1.2.33";
         edition = "2018";
-        sha256 = "0qlkaspjmywvjyfqhpv2x4kwrqs6b69zg33wfi2l8fg2im9rj5aw";
+        sha256 = "0pwv1ql0gpvacwdn44643adr0s0q8p575pbp4xz5mfi26a0giq1y";
         authors = [
           "Alex Crichton <alex@alexcrichton.com>"
         ];
@@ -616,9 +613,9 @@ rec {
       };
       "dyn-clone" = rec {
         crateName = "dyn-clone";
-        version = "1.0.19";
+        version = "1.0.20";
         edition = "2018";
-        sha256 = "01ahm5abl20480v48nxy4ffyx80cs6263q9zf0gnrxpvm6w8yyhw";
+        sha256 = "0m956cxcg8v2n8kmz6xs5zl13k2fak3zkapzfzzp7pxih6hix26h";
         libName = "dyn_clone";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
@@ -797,9 +794,9 @@ rec {
       };
       "glob" = rec {
         crateName = "glob";
-        version = "0.3.2";
+        version = "0.3.3";
         edition = "2015";
-        sha256 = "1cm2w34b5w45fxr522h5b0fv1bxchfswcj560m3pnjbia7asvld8";
+        sha256 = "106jpd3syfzjfj2k70mwm0v436qbx96wig98m4q8x071yrq35hhc";
         authors = [
           "The Rust Project Developers"
         ];
@@ -827,11 +824,11 @@ rec {
         };
         resolvedDefaultFeatures = [ "raw" ];
       };
-      "hashbrown 0.15.4" = rec {
+      "hashbrown 0.15.5" = rec {
         crateName = "hashbrown";
-        version = "0.15.4";
+        version = "0.15.5";
         edition = "2021";
-        sha256 = "1mg045sm1nm00cwjm7ndi80hcmmv1v3z7gnapxyhd9qxc62sqwar";
+        sha256 = "189qaczmjxnikm9db748xyhiw04kpmhm9xj9k9hg0sgx7pjwyacj";
         authors = [
           "Amanieu d'Antras <amanieu@gmail.com>"
         ];
@@ -1006,7 +1003,7 @@ rec {
           }
           {
             name = "hashbrown";
-            packageId = "hashbrown 0.15.4";
+            packageId = "hashbrown 0.15.5";
             usesDefaultFeatures = false;
           }
           {
@@ -1067,9 +1064,9 @@ rec {
       };
       "libc" = rec {
         crateName = "libc";
-        version = "0.2.174";
+        version = "0.2.175";
         edition = "2021";
-        sha256 = "0xl7pqvw7g2874dy3kjady2fjr4rhj5lxsnxkkhr5689jcr6jw8i";
+        sha256 = "0hw5sb3gjr0ivah7s3fmavlpvspjpd4mr009abmam2sr7r4sx0ka";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1096,7 +1093,7 @@ rec {
           "default" = [ "std" "general" "errno" ];
           "rustc-dep-of-std" = [ "core" "compiler_builtins" "no_std" ];
         };
-        resolvedDefaultFeatures = [ "elf" "errno" "general" "if_ether" "ioctl" "net" "netlink" "no_std" "prctl" "xdp" ];
+        resolvedDefaultFeatures = [ "elf" "errno" "general" "ioctl" "no_std" ];
       };
       "linux-raw-sys 0.9.4" = rec {
         crateName = "linux-raw-sys";
@@ -1113,7 +1110,7 @@ rec {
           "default" = [ "std" "general" "errno" ];
           "rustc-dep-of-std" = [ "core" "compiler_builtins" "no_std" ];
         };
-        resolvedDefaultFeatures = [ "elf" "errno" "general" "ioctl" "no_std" ];
+        resolvedDefaultFeatures = [ "elf" "errno" "general" "if_ether" "ioctl" "net" "netlink" "no_std" "prctl" "xdp" ];
       };
       "log" = rec {
         crateName = "log";
@@ -1521,9 +1518,9 @@ rec {
       };
       "proc-macro2" = rec {
         crateName = "proc-macro2";
-        version = "1.0.95";
+        version = "1.0.101";
         edition = "2021";
-        sha256 = "0y7pwxv6sh4fgg6s715ygk1i7g3w02c0ljgcsfm046isibkfbcq2";
+        sha256 = "1pijhychkpl7rcyf1h7mfk6gjfii1ywf5n0snmnqs5g4hvyl7bl9";
         libName = "proc_macro2";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
@@ -1542,9 +1539,9 @@ rec {
       };
       "psutil" = rec {
         crateName = "psutil";
-        version = "5.3.0";
+        version = "5.4.0";
         edition = "2018";
-        sha256 = "01xs21y7p6m629hg6vz0brjp99jlgdsfmf1qhx5qmsnx50as4d1z";
+        sha256 = "11vdj0hwmwb4ncrqjfk9swpyybm96ry0lajd464w6jvf8fwvji75";
         authors = [
           "Caleb Bassi <calebjbassi@gmail.com>"
           "Rob Day <rkd@rkd.me.uk>"
@@ -1610,7 +1607,7 @@ rec {
           }
         ];
         features = {
-          "cpu" = [ "mach2" "num_cpus" ];
+          "cpu" = [ "mach2" "num_cpus" "glob" ];
           "darwin-libproc" = [ "dep:darwin-libproc" ];
           "default" = [ "cpu" "disk" "host" "memory" "network" "process" "sensors" ];
           "derive_more" = [ "dep:derive_more" ];
@@ -1841,13 +1838,13 @@ rec {
           "thread" = [ "linux-raw-sys/prctl" ];
           "use-libc" = [ "libc_errno" "libc" "libc-extra-traits" ];
         };
-        resolvedDefaultFeatures = [ "alloc" "default" "event" "fs" "libc-extra-traits" "net" "process" "std" "use-libc-auxv" ];
+        resolvedDefaultFeatures = [ "alloc" "default" "event" "fs" "libc-extra-traits" "std" "use-libc-auxv" ];
       };
-      "rustix 1.0.7" = rec {
+      "rustix 1.0.8" = rec {
         crateName = "rustix";
-        version = "1.0.7";
+        version = "1.0.8";
         edition = "2021";
-        sha256 = "0rhjh16bnxi86nrn9qwcnw5632mvd5m1vdy61s4n9zz7mzb867n7";
+        sha256 = "1j6ajqi61agdnh1avr4bplrsgydjw1n4mycdxw3v8g94pyx1y60i";
         authors = [
           "Dan Gohman <dev@sunfishcode.online>"
           "Jakub Konka <kubkon@jakubkonka.com>"
@@ -1909,7 +1906,7 @@ rec {
           }
           {
             name = "windows-sys";
-            packageId = "windows-sys 0.59.0";
+            packageId = "windows-sys 0.60.2";
             target = { target, features }: (target."windows" or false);
             features = [ "Win32_Foundation" "Win32_Networking_WinSock" ];
           }
@@ -1928,7 +1925,6 @@ rec {
         ];
         features = {
           "all-apis" = [ "event" "fs" "io_uring" "mm" "mount" "net" "param" "pipe" "process" "pty" "rand" "runtime" "shm" "stdio" "system" "termios" "thread" "time" ];
-          "compiler_builtins" = [ "dep:compiler_builtins" ];
           "core" = [ "dep:core" ];
           "default" = [ "std" ];
           "io_uring" = [ "event" "fs" "net" "thread" "linux-raw-sys/io_uring" ];
@@ -1941,7 +1937,7 @@ rec {
           "process" = [ "linux-raw-sys/prctl" ];
           "pty" = [ "fs" ];
           "runtime" = [ "linux-raw-sys/prctl" ];
-          "rustc-dep-of-std" = [ "core" "rustc-std-workspace-alloc" "compiler_builtins" "linux-raw-sys/rustc-dep-of-std" "bitflags/rustc-dep-of-std" "compiler_builtins?/rustc-dep-of-std" ];
+          "rustc-dep-of-std" = [ "core" "rustc-std-workspace-alloc" "linux-raw-sys/rustc-dep-of-std" "bitflags/rustc-dep-of-std" ];
           "rustc-std-workspace-alloc" = [ "dep:rustc-std-workspace-alloc" ];
           "shm" = [ "fs" ];
           "std" = [ "bitflags/std" "alloc" "libc?/std" "libc_errno?/std" ];
@@ -1949,13 +1945,13 @@ rec {
           "thread" = [ "linux-raw-sys/prctl" ];
           "use-libc" = [ "libc_errno" "libc" ];
         };
-        resolvedDefaultFeatures = [ "alloc" "default" "fs" "std" ];
+        resolvedDefaultFeatures = [ "alloc" "default" "event" "fs" "net" "process" "std" ];
       };
       "rustversion" = rec {
         crateName = "rustversion";
-        version = "1.0.21";
+        version = "1.0.22";
         edition = "2018";
-        sha256 = "07bb1xx05hhwpnl43sqrhsmxyk5sd5m5baadp19nxp69s9xij3ca";
+        sha256 = "0vfl70jhv72scd9rfqgr2n11m5i9l1acnk684m2w83w0zbqdx75k";
         procMacro = true;
         build = "build/build.rs";
         authors = [
@@ -2163,9 +2159,9 @@ rec {
       };
       "serde_json" = rec {
         crateName = "serde_json";
-        version = "1.0.140";
+        version = "1.0.142";
         edition = "2021";
-        sha256 = "0wwkp4vc20r87081ihj3vpyz5qf7wqkqipq17v99nv6wjrp8n1i0";
+        sha256 = "19y5mz1npafnd6vlaiv41ns3pb0pv3q9nirdy3bcn3b0havys3q3";
         authors = [
           "Erick Tryzelaar <erick.tryzelaar@gmail.com>"
           "David Tolnay <dtolnay@gmail.com>"
@@ -2422,9 +2418,9 @@ rec {
       };
       "syn" = rec {
         crateName = "syn";
-        version = "2.0.104";
+        version = "2.0.106";
         edition = "2021";
-        sha256 = "0h2s8cxh5dsh9h41dxnlzpifqqn59cqgm0kljawws61ljq2zgdhp";
+        sha256 = "19mddxp1ia00hfdzimygqmr1jqdvyl86k48427bkci4d08wc9rzd";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -2484,7 +2480,7 @@ rec {
           }
           {
             name = "rustix";
-            packageId = "rustix 1.0.7";
+            packageId = "rustix 1.0.8";
             target = { target, features }: ((target."unix" or false) || ("wasi" == target."os" or null));
             features = [ "fs" ];
           }
@@ -2503,9 +2499,9 @@ rec {
       };
       "thiserror" = rec {
         crateName = "thiserror";
-        version = "2.0.12";
+        version = "2.0.15";
         edition = "2021";
-        sha256 = "024791nsc0np63g2pq30cjf9acj38z3jwx9apvvi8qsqmqnqlysn";
+        sha256 = "0l18636gw537pp3h94jv3nngvy8bbbsbgdmlxj4i762b0qznvmw0";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -2522,9 +2518,9 @@ rec {
       };
       "thiserror-impl" = rec {
         crateName = "thiserror-impl";
-        version = "2.0.12";
+        version = "2.0.15";
         edition = "2021";
-        sha256 = "07bsn7shydaidvyyrm7jz29vp78vrxr9cr9044rfmn078lmz8z3z";
+        sha256 = "1q1xc98s70ipx2jymcvi4gwq6sc5k9aw7nbbj3mbd1p96gmrzlj4";
         procMacro = true;
         libName = "thiserror_impl";
         authors = [
@@ -2665,18 +2661,14 @@ rec {
       };
       "tree_magic_mini" = rec {
         crateName = "tree_magic_mini";
-        version = "3.1.6";
+        version = "3.2.0";
         edition = "2021";
-        sha256 = "0qwx2b0xfr00vdskl951cvh3m040zj5n8vm7ln4k6p143ybyiida";
+        sha256 = "0b2ncw376snr5lwdnmpqgnz4bm1j0c8xf11sq3pfipvci4fkjhzr";
         authors = [
           "Matt Brubeck <mbrubeck@limpet.net>"
           "Allison Hancock <aahancoc@umich.edu>"
         ];
         dependencies = [
-          {
-            name = "fnv";
-            packageId = "fnv";
-          }
           {
             name = "memchr";
             packageId = "memchr";
@@ -2910,9 +2902,9 @@ rec {
       };
       "wayland-backend" = rec {
         crateName = "wayland-backend";
-        version = "0.3.10";
+        version = "0.3.11";
         edition = "2021";
-        sha256 = "08a1l8ya2siwvr9jhdz43nmmm7brnw848zra7sfwfpry8a0h2xzy";
+        sha256 = "0dcvwkhz45gsm7f9dwr31pxijkhpza09a4vb3blsv9a8631k6fk7";
         libName = "wayland_backend";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2924,7 +2916,7 @@ rec {
           }
           {
             name = "rustix";
-            packageId = "rustix 0.38.44";
+            packageId = "rustix 1.0.8";
             features = [ "event" "fs" "net" "process" ];
           }
           {
@@ -2954,9 +2946,9 @@ rec {
       };
       "wayland-client" = rec {
         crateName = "wayland-client";
-        version = "0.31.10";
+        version = "0.31.11";
         edition = "2021";
-        sha256 = "0qcsgnfvgyxpvda70ww2836p8j8pd4jwll7km7bdniq8gg3ag3wp";
+        sha256 = "17a4vl5qw4jnnh2azm0d3kcpajyb9qz4psv448zpj86w83l4fsn6";
         libName = "wayland_client";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2968,7 +2960,7 @@ rec {
           }
           {
             name = "rustix";
-            packageId = "rustix 0.38.44";
+            packageId = "rustix 1.0.8";
             features = [ "event" ];
           }
           {
@@ -2986,9 +2978,9 @@ rec {
       };
       "wayland-protocols" = rec {
         crateName = "wayland-protocols";
-        version = "0.32.8";
+        version = "0.32.9";
         edition = "2021";
-        sha256 = "0aj2209i962k1www23wb7zdgx81y6a35ilgyjhbm56hy9r2pb43p";
+        sha256 = "00cripl4m7hzhl0gzp4bqayal8n0zlf1llnj7cl73zgvfpnr19zg";
         libName = "wayland_protocols";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -3022,9 +3014,9 @@ rec {
       };
       "wayland-protocols-wlr" = rec {
         crateName = "wayland-protocols-wlr";
-        version = "0.3.8";
+        version = "0.3.9";
         edition = "2021";
-        sha256 = "1gwbd9nv71ahaqylfm2lvml5bwl6z0ygwdy40ijy1h4r6g3wvdhw";
+        sha256 = "1v3qbg18vsb3i62c6042xhjm7dcflmylzjlhl0w9kks3xmilkngg";
         libName = "wayland_protocols_wlr";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -3062,9 +3054,9 @@ rec {
       };
       "wayland-scanner" = rec {
         crateName = "wayland-scanner";
-        version = "0.31.6";
+        version = "0.31.7";
         edition = "2021";
-        sha256 = "110ldnyfxjqvjssir1jf3ndlci7xy9lpv4aqg775y518bpyxlvw9";
+        sha256 = "1qqalp551blcxjzx80zvs7ckc19k966892zxpm81kacxqjfixjsl";
         procMacro = true;
         libName = "wayland_scanner";
         authors = [
@@ -3088,9 +3080,9 @@ rec {
       };
       "wayland-sys" = rec {
         crateName = "wayland-sys";
-        version = "0.31.6";
+        version = "0.31.7";
         edition = "2021";
-        sha256 = "05b6i4lg2qrrz7l4h2b5fd7blkkvxq34i1yvlngsmmbpkhwvpknv";
+        sha256 = "0hk157yawv9y7aj7fxbldhlvv8p33c65v3nv85mq4m91h919p51l";
         libName = "wayland_sys";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -3538,7 +3530,7 @@ rec {
         dependencies = [
           {
             name = "windows-targets";
-            packageId = "windows-targets 0.53.2";
+            packageId = "windows-targets 0.53.3";
             usesDefaultFeatures = false;
           }
         ];
@@ -3789,7 +3781,7 @@ rec {
           "Win32_Web" = [ "Win32" ];
           "Win32_Web_InternetExplorer" = [ "Win32_Web" ];
         };
-        resolvedDefaultFeatures = [ "Win32" "Win32_Foundation" "Win32_System" "Win32_System_Diagnostics" "Win32_System_Diagnostics_Debug" "default" ];
+        resolvedDefaultFeatures = [ "Win32" "Win32_Foundation" "Win32_Networking" "Win32_Networking_WinSock" "Win32_System" "Win32_System_Diagnostics" "Win32_System_Diagnostics_Debug" "default" ];
       };
       "windows-targets 0.52.6" = rec {
         crateName = "windows-targets";
@@ -3844,16 +3836,22 @@ rec {
         ];
 
       };
-      "windows-targets 0.53.2" = rec {
+      "windows-targets 0.53.3" = rec {
         crateName = "windows-targets";
-        version = "0.53.2";
+        version = "0.53.3";
         edition = "2021";
-        sha256 = "1vwanhx2br7dh8mmrszdbcf01bccjr01mcyxcscxl4ffr7y6jvy6";
+        sha256 = "14fwwm136dhs3i1impqrrip7nvkra3bdxa4nqkblj604qhqn1znm";
         libName = "windows_targets";
         authors = [
           "Microsoft"
         ];
         dependencies = [
+          {
+            name = "windows-link";
+            packageId = "windows-link";
+            usesDefaultFeatures = false;
+            target = { target, features }: (target."windows_raw_dylib" or false);
+          }
           {
             name = "windows_aarch64_gnullvm";
             packageId = "windows_aarch64_gnullvm 0.53.0";
