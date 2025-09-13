@@ -226,6 +226,8 @@ pkgs = rec {
 
   userwgns = nixpkgs.callPackage ./userwgns {};
 
+  natpmploop = nixpkgs.callPackage ./natpmploop {};
+
   iron-packages = nixpkgs.buildEnv {
     name = "iron-packages";
     paths = [
@@ -266,6 +268,7 @@ pkgs = rec {
       reset-doc-permissions-service
       open-url-in
       userwgns
+      natpmploop
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
