@@ -217,6 +217,8 @@ pkgs = rec {
     pathsToLink = [ "/bin" "/lib" "/share" ];
   };
 
+  userwgns = nixpkgs.callPackage ./userwgns {};
+
   iron-packages = nixpkgs.buildEnv {
     name = "iron-packages";
     paths = [
@@ -256,6 +258,7 @@ pkgs = rec {
       runsway
       reset-doc-permissions-service
       open-url-in
+      userwgns
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
