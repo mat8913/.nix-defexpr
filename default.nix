@@ -28,6 +28,13 @@ packageOverrides = pkgs: rec {
       mpris
     ];
   };
+
+  python3 = pkgs.python3.override {
+    packageOverrides = self: super: {
+      py-natpmp = pkgs.python3Packages.callPackage ./py-natpmp {};
+    };
+    self = python3;
+  };
 };
 
 pkgs = rec {
