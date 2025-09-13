@@ -20,8 +20,8 @@ let
         c = ConfigParser()
         c.read(config_file)
 
-        dns = c['Interface']['DNS']
-        address = c['Interface']['Address']
+        dns = strip_split(c['Interface']['DNS'])
+        address = strip_split(c['Interface']['Address'])
 
         del c['Interface']['DNS']
         del c['Interface']['Address']
@@ -32,13 +32,19 @@ let
             subprocess.run(['wg', 'setconf', interface, f.name], check=True)
 
         subprocess.run(['ip', 'link', 'set', 'dev', interface, 'up'], check=True)
-        subprocess.run(['ip', 'addr', 'add', 'dev', interface, address], check=True)
+        for x in address:
+            subprocess.run(['ip', 'addr', 'add', 'dev', interface, x], check=True)
         subprocess.run(['ip', 'route', 'add', 'default', 'dev', interface], check=True)
+        subprocess.run(['ip', '-6', 'route', 'add', 'default', 'dev', interface], check=True)
 
         with NamedTemporaryFile(mode='w') as f:
-            print('nameserver', dns, file=f)
+            for x in dns:
+                print('nameserver', x, file=f)
             subprocess.run(['mount', '--bind', '-o', 'ro', f.name, '/etc/resolv.conf'], check=True)
 
+
+    def strip_split(s):
+        return [x.strip() for x in s.split(',')]
 
     if __name__ == "__main__":
         if len(sys.argv) != 3:
