@@ -11,8 +11,8 @@ PDRIVE=os.environ["PDRIVE"]
 def run_backup(src, name, dst):
     with tempfile.TemporaryDirectory() as d:
         tarfile = d + '/' + name + '.tar'
-        subprocess.run(["tar", "-cf", tarfile, src])
-        subprocess.run([PDRIVE, "put", "--enable-sdk-log", tarfile, dst])
+        subprocess.run(["tar", "-cf", tarfile, src], check=True)
+        subprocess.run([PDRIVE, "put", "--enable-sdk-log", "--overwrite", tarfile, dst], check=True)
 
 
 def main():
