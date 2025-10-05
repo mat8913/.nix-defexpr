@@ -254,6 +254,7 @@ pkgs = rec {
       nixpkgs.adwaita-icon-theme
       nixpkgs.imv
       nixpkgs.gammastep
+      nixpkgs.podman
 
       backups
 
