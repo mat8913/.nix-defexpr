@@ -35,6 +35,8 @@ packageOverrides = pkgs: rec {
     };
     self = python3;
   };
+
+  unofficial-pdrive-cli = (pkgs.callPackage ./unofficial-pdrive-cli { }).unofficial-pdrive-cli;
 };
 
 pkgs = rec {
@@ -224,6 +226,8 @@ pkgs = rec {
     pathsToLink = [ "/bin" "/lib" "/share" ];
   };
 
+  backups = nixpkgs.callPackage ./backups {};
+
   userwgns = nixpkgs.callPackage ./userwgns {};
 
   natpmploop = nixpkgs.callPackage ./natpmploop {};
@@ -250,6 +254,8 @@ pkgs = rec {
       nixpkgs.adwaita-icon-theme
       nixpkgs.imv
       nixpkgs.gammastep
+
+      backups
 
       my-vim
       my-profile
