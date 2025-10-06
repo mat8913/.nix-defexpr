@@ -228,6 +228,8 @@ pkgs = rec {
 
   backups = nixpkgs.callPackage ./backups {};
 
+  unofficial-pdrive-http-bridge-service = (nixpkgs.callPackage ./unofficial-pdrive-http-bridge { }).service;
+
   userwgns = nixpkgs.callPackage ./userwgns {};
 
   natpmploop = nixpkgs.callPackage ./natpmploop {};
@@ -270,6 +272,7 @@ pkgs = rec {
       my-installconf
       my-swaync
       my-syncthing-service
+      unofficial-pdrive-http-bridge-service
 
       runsway
       reset-doc-permissions-service
