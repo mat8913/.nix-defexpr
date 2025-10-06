@@ -177,6 +177,16 @@ pkgs = rec {
     WantedBy=default.target
   '';
 
+  proton-mount-service = nixpkgs.writeTextDir "/share/systemd/user/proton-mount.service" ''
+    [Service]
+    ExecStartPre=${nixpkgs.coreutils}/bin/mkdir -p "%t/media/proton"
+    ExecStart=${nixpkgs.rclone}/bin/rclone mount proton: "%t/media/proton" --read-only
+    Type=simple
+
+    [Install]
+    WantedBy=default.target
+  '';
+
   my-vim = nixpkgs.vim-full.customize {
     vimrcConfig.customRC = ''
       syntax on
@@ -273,6 +283,7 @@ pkgs = rec {
       my-swaync
       my-syncthing-service
       unofficial-pdrive-http-bridge-service
+      proton-mount-service
 
       runsway
       reset-doc-permissions-service
