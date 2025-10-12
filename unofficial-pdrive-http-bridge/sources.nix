@@ -18,7 +18,7 @@
   unofficial-pdrive-http-bridge = fetchFromGitHub {
     owner = "mat8913";
     repo = "unofficial-pdrive-http-bridge";
-    rev = "6d92490fc073065840a8f1370c3cba925c8e85a0";
-    hash = "sha256-HvTAefjXyBhm+4PsDycDN3K63mIqbRTUjiUgqEHX9BE=";
+    rev = "ff5375e8c57141a2bbb710743d14a23eeb69a8b2";
+    hash = "sha256-ZNjJQLLe5VIp0/JCod1iYgeo1HRUkW3IHuuLWmmH/kQ=";
   };
 }
