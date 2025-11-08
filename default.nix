@@ -180,7 +180,7 @@ pkgs = rec {
   proton-mount-service = nixpkgs.writeTextDir "/share/systemd/user/proton-mount.service" ''
     [Service]
     ExecStartPre=${nixpkgs.coreutils}/bin/mkdir -p "%t/media/proton"
-    ExecStart=${nixpkgs.rclone}/bin/rclone mount proton: "%t/media/proton" --read-only
+    ExecStart=${nixpkgs.rclone}/bin/rclone mount proton: "%t/media/proton" --read-only --dir-cache-time=1s --vfs-cache-mode=full --vfs-cache-max-size=500G
     Type=simple
 
     [Install]
