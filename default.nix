@@ -267,6 +267,7 @@ pkgs = rec {
       nixpkgs.imv
       nixpkgs.gammastep
       nixpkgs.podman
+      nixpkgs.taskwarrior2
 
       backups
 
