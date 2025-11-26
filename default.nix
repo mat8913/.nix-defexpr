@@ -66,6 +66,8 @@ pkgs = rec {
       rm -f -- "$temp_file"
       return "$return_value"
     }
+
+    task "due.before:$(date -d 'now + 2 weeks + 1 day' -I)" or +ACTIVE
   '';
 
   my-gitconfig-text = nixpkgs.writeText "my-gitconfig" ''
