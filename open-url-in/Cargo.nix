@@ -111,9 +111,9 @@ rec {
       };
       "cairo-rs" = rec {
         crateName = "cairo-rs";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "1cc1xyhcch1p3s85b2zc732rz3qz11wpcf33wdq8hr6syi6kbr6z";
+        sha256 = "1r679k0wbrxa773cw207wmnhx8sypm4s7pmncbiay5mxq0sy27xh";
         libName = "cairo";
         authors = [
           "The gtk-rs Project Developers"
@@ -159,9 +159,9 @@ rec {
       };
       "cairo-sys-rs" = rec {
         crateName = "cairo-sys-rs";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "1y03q419jfks67ycdy1q8ik2bahi6l092xg09n7fn0vi1hqc7mj7";
+        sha256 = "0p14dpy8ar6gqi493nn04w5n7rp438km8icywfsma85iqs085hh6";
         libName = "cairo_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -427,9 +427,9 @@ rec {
       };
       "gdk-pixbuf" = rec {
         crateName = "gdk-pixbuf";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "03q52c62r2m5xkssld51mba91i7s7f92iz0nfvrm94ankx2n8g1a";
+        sha256 = "0350zm38d7sf3ilnwy9fxyhajbdslvjdcm7xxlk4dn6dwcwhvfyy";
         libName = "gdk_pixbuf";
         authors = [
           "The gtk-rs Project Developers"
@@ -460,9 +460,9 @@ rec {
       };
       "gdk-pixbuf-sys" = rec {
         crateName = "gdk-pixbuf-sys";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "097ppbqq1nf65i7cpihhx324wyfin2f5y7d02d03p3wbd9xfym1q";
+        sha256 = "1rqc1bv3ln6hx4a4bn3jagz75dzhmy96hkyx4lg5blm3p58av5dx";
         libName = "gdk_pixbuf_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -498,9 +498,9 @@ rec {
       };
       "gdk4" = rec {
         crateName = "gdk4";
-        version = "0.10.1";
+        version = "0.10.3";
         edition = "2021";
-        sha256 = "1w6plimn5brysrifkmhd6846059rmd10z808qm038vn2kmj95qn7";
+        sha256 = "1gxzhk55r0nh48ld7l1j700cc6jqh8jvvzw8bph4qjmy5chn8rbm";
         authors = [
           "The gtk-rs Project Developers"
         ];
@@ -555,9 +555,9 @@ rec {
       };
       "gdk4-sys" = rec {
         crateName = "gdk4-sys";
-        version = "0.10.1";
+        version = "0.10.3";
         edition = "2021";
-        sha256 = "1krqwiyfj53vf9bxqp3gkaw1skcgvdjrnih4gqmbzq7ili7igwzl";
+        sha256 = "0d5hk2agfifnn0hgcjyb4lcrvrdlaxgkzj6w99m854gmrjrybm56";
         libName = "gdk4_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -621,9 +621,9 @@ rec {
       };
       "gio" = rec {
         crateName = "gio";
-        version = "0.21.4";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "177x2y0ap3xazpc2qq61ysggja1d3imbfxmra0caj6vdf7fz7vys";
+        sha256 = "06l1nlq5r0dvm0xmhrpgvs8ypx7jcb3vgihxwrvb8s0cc2zlizy5";
         authors = [
           "The gtk-rs Project Developers"
         ];
@@ -695,9 +695,9 @@ rec {
       };
       "gio-sys" = rec {
         crateName = "gio-sys";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "01mp37p1vp5hp9arv1zm2d836b05yazyxnfg13hvnyljvpvd47hp";
+        sha256 = "08hgv0lqm94hyhdisjrl52bg9699c9ibp6zzr2301r58vf4gww80";
         libName = "gio_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -748,9 +748,9 @@ rec {
       };
       "glib" = rec {
         crateName = "glib";
-        version = "0.21.4";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "1cn44nf40ds5czdymihpyll1r7inmfigxb74iflq7r1k3k5vx7av";
+        sha256 = "12xxy5js4bfpjz9k6831xj090r5y37g30wrvawxwx43c5qy15phn";
         authors = [
           "The gtk-rs Project Developers"
         ];
@@ -839,9 +839,9 @@ rec {
       };
       "glib-macros" = rec {
         crateName = "glib-macros";
-        version = "0.21.4";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "1yqrkzy4nw14mbjacxwr3ms6839c40n2nlrqzdn59ww5017543l8";
+        sha256 = "05vzv1m4dg1cpkakxk3n1846acv4fhwhghq1zsbaca0j61svcnfg";
         procMacro = true;
         libName = "glib_macros";
         authors = [
@@ -874,9 +874,9 @@ rec {
       };
       "glib-sys" = rec {
         crateName = "glib-sys";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "1q97z7ii4qgmyxcz0m7c5xil9n7vbm3b0msfcwhra8zpvl7kv7fh";
+        sha256 = "0v1ymxb51sbwv242slq21kbn8g38j2day53f52kn9r4sl6iy359d";
         libName = "glib_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -913,9 +913,9 @@ rec {
       };
       "gobject-sys" = rec {
         crateName = "gobject-sys";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "0388b5gx7v72y30q27byilvbq2nnrv72l3vvgq8fqwv1fzc433jk";
+        sha256 = "157jv8ga4f7p4vrn4mmg84lrl0ly3kz9kjzkfm2qz88r1pd3bjid";
         libName = "gobject_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -954,9 +954,9 @@ rec {
       };
       "graphene-rs" = rec {
         crateName = "graphene-rs";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "1hyx8mm7irx09l9q84snddk8m1q56x1f6fffpzrmp59vbnprlx77";
+        sha256 = "1yg23ws354622ya5qccwvf9gpjn188vhkrz1pzc3yrnvr4506c17";
         libName = "graphene";
         authors = [
           "The gtk-rs Project Developers"
@@ -981,9 +981,9 @@ rec {
       };
       "graphene-sys" = rec {
         crateName = "graphene-sys";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "0s553zjb0mgispg2nhbkjlzifmn3560ag44qa1va540ahppbl2i5";
+        sha256 = "14zxhk20yypksyh8kx14xf5ddhjifcmzcjh49cg29bd93q4k4pli";
         libName = "graphene_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -1013,9 +1013,9 @@ rec {
       };
       "gsk4" = rec {
         crateName = "gsk4";
-        version = "0.10.1";
+        version = "0.10.3";
         edition = "2021";
-        sha256 = "0bgvn6h7amx2hi7xybyp2fa0jkciyzx0qh3nqc0c12fajagpws5n";
+        sha256 = "0lx17acgawg9xn216lgikcdpy1lxjvhqk2q2mazcb5jqijfxwmg7";
         authors = [
           "The gtk-rs Project Developers"
         ];
@@ -1070,9 +1070,9 @@ rec {
       };
       "gsk4-sys" = rec {
         crateName = "gsk4-sys";
-        version = "0.10.1";
+        version = "0.10.3";
         edition = "2021";
-        sha256 = "0llck337fg8gabd4j635gg0w9jf01i05px2ijvqlcj4w9pvbqxjy";
+        sha256 = "1xzlf8yidajc86cm7fcmn5br11lgdn3l242z0s1g8ihi75r19sbw";
         libName = "gsk4_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -1129,9 +1129,9 @@ rec {
       };
       "gtk4" = rec {
         crateName = "gtk4";
-        version = "0.10.2";
+        version = "0.10.3";
         edition = "2021";
-        sha256 = "11zfgwl6zm2dky7klvhnc3721n89sbip4vlj1rdp584ibdwp3sjq";
+        sha256 = "1971514d9kadzj61rn28fgc4gjk77g2335sl8fpvzxy6rx9ivcmc";
         authors = [
           "The gtk-rs Project Developers"
         ];
@@ -1223,9 +1223,9 @@ rec {
       };
       "gtk4-macros" = rec {
         crateName = "gtk4-macros";
-        version = "0.10.1";
+        version = "0.10.3";
         edition = "2021";
-        sha256 = "0sp0qp96jj6xajnblz989k8bwiha5ml2734193blwzkyy6s604c2";
+        sha256 = "0hiy02q0gnfqg1bj8iycb5xmgm0jz80q2psxh521551x9ahvbkrw";
         procMacro = true;
         libName = "gtk4_macros";
         authors = [
@@ -1258,10 +1258,10 @@ rec {
       };
       "gtk4-sys" = rec {
         crateName = "gtk4-sys";
-        version = "0.10.1";
+        version = "0.10.3";
         edition = "2021";
         links = "gtk-4";
-        sha256 = "04d0qlf6jvxnd4a6f00k9r8lxmlr6as23jvqzxx5p9csgnpwnx6j";
+        sha256 = "1pc803r3921h44pa773qpirn3aqcrq2fibykdhb5vq8ybbz7f9c4";
         libName = "gtk4_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -1389,9 +1389,9 @@ rec {
       };
       "libc" = rec {
         crateName = "libc";
-        version = "0.2.177";
+        version = "0.2.178";
         edition = "2021";
-        sha256 = "0xjrn69cywaii1iq2lib201bhlvan7czmrm604h5qcm28yps4x18";
+        sha256 = "1490yks6mria93i3xdva1gm05cjz824g14mbv0ph32lxma6kvj9p";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1464,9 +1464,9 @@ rec {
       };
       "pango" = rec {
         crateName = "pango";
-        version = "0.21.3";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "0bj08nhkibkfynkhivyxsn89bjfsnavkjzjz93rfkhhqirkplyz3";
+        sha256 = "0sgb6xls3l07f7b257rp3gjx9g6mhckhgz5pbc37l1vq41gdilaj";
         authors = [
           "The gtk-rs Project Developers"
         ];
@@ -1503,9 +1503,9 @@ rec {
       };
       "pango-sys" = rec {
         crateName = "pango-sys";
-        version = "0.21.2";
+        version = "0.21.5";
         edition = "2021";
-        sha256 = "154w00ccb4gpb2pwqasm4dy66xzbxc7dm4h05agvlgx43prdmxgl";
+        sha256 = "1zbcw3b2i5ixzy0ds65z2xdvllifzh8m5xid7lqgzmbfsckndw5l";
         libName = "pango_sys";
         authors = [
           "The gtk-rs Project Developers"
@@ -1948,9 +1948,9 @@ rec {
       };
       "toml_edit" = rec {
         crateName = "toml_edit";
-        version = "0.23.7";
+        version = "0.23.9";
         edition = "2021";
-        sha256 = "13cgp4y6prad1lh18bbg64zkq48hafq7xzs4fb0hwpcv1mnyz1b4";
+        sha256 = "0ckqh02lfhacna9m09icwc5fh3d5ihah74shl1bksqs99cxvqz2x";
         dependencies = [
           {
             name = "indexmap";
@@ -2306,9 +2306,9 @@ rec {
       };
       "winnow" = rec {
         crateName = "winnow";
-        version = "0.7.13";
+        version = "0.7.14";
         edition = "2021";
-        sha256 = "1krrjc1wj2vx0r57m9nwnlc1zrhga3fq41d8w9hysvvqb5mj7811";
+        sha256 = "0a88ahjqhyn2ln1yplq2xsigm09kxqkdkkk2c2mfxkbzszln8lss";
         dependencies = [
           {
             name = "memchr";
