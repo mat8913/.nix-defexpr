@@ -26,6 +26,7 @@ packageOverrides = pkgs: rec {
 
     scripts = with pkgs.mpvScripts; [
       mpris
+      youtube-chat
     ];
   };
 
