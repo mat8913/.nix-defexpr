@@ -30,6 +30,8 @@ packageOverrides = pkgs: rec {
     ];
   };
 
+  yt-dlp = pkgs.callPackage ./yt-dlp/package.nix {};
+
   python3 = pkgs.python3.override {
     packageOverrides = self: super: {
       py-natpmp = pkgs.python3Packages.callPackage ./py-natpmp {};
