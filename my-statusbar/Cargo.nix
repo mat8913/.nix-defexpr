@@ -245,9 +245,9 @@ rec {
       };
       "chrono" = rec {
         crateName = "chrono";
-        version = "0.4.43";
+        version = "0.4.44";
         edition = "2021";
-        sha256 = "06312amlyys4kkjazl13mbxw0j2f7zxygzjkr1yk7s2sn57p9i7s";
+        sha256 = "1c64mk9a235271j5g3v4zrzqqmd43vp9vki7vqfllpqf5rd0fwy6";
         dependencies = [
           {
             name = "iana-time-zone";
@@ -996,9 +996,9 @@ rec {
       };
       "js-sys" = rec {
         crateName = "js-sys";
-        version = "0.3.88";
+        version = "0.3.91";
         edition = "2021";
-        sha256 = "0gaizs0fw0win4pjdd685i11i6r8mw0zyfjvqbwnca6jwgrhkry7";
+        sha256 = "171rzgq33wc1nxkgnvhlqqwwnrifs13mg3jjpjj5nf1z0yvib5xl";
         libName = "js_sys";
         authors = [
           "The wasm-bindgen Developers"
@@ -1023,9 +1023,9 @@ rec {
       };
       "libc" = rec {
         crateName = "libc";
-        version = "0.2.182";
+        version = "0.2.183";
         edition = "2021";
-        sha256 = "04k1w1mq9f4cxv520dbr5xw1i7xkbc9fcrvaggyjy25jdkdvl038";
+        sha256 = "17c9gyia7rrzf9gsssvk3vq9ca2jp6rh32fsw6ciarpn5djlddmm";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1039,9 +1039,9 @@ rec {
       };
       "linux-raw-sys" = rec {
         crateName = "linux-raw-sys";
-        version = "0.11.0";
+        version = "0.12.1";
         edition = "2021";
-        sha256 = "0fghx0nn8nvbz5yzgizfcwd6ap2pislp68j8c1bwyr6sacxkq7fz";
+        sha256 = "0lwasljrqxjjfk9l2j8lyib1babh2qjlnhylqzl01nihw14nk9ij";
         libName = "linux_raw_sys";
         authors = [
           "Dan Gohman <dev@sunfishcode.online>"
@@ -1562,9 +1562,9 @@ rec {
       };
       "quick-xml" = rec {
         crateName = "quick-xml";
-        version = "0.38.4";
+        version = "0.39.2";
         edition = "2021";
-        sha256 = "0772siy4d9vlq77842012c8cycs3y0szxkv62rh9sh2sqmc20v5n";
+        sha256 = "0z86jkw618p0d7q3zqp7pzh7cnf7wwlanzx8gyma3dffwzl233wm";
         libName = "quick_xml";
         dependencies = [
           {
@@ -1587,9 +1587,9 @@ rec {
       };
       "quote" = rec {
         crateName = "quote";
-        version = "1.0.44";
+        version = "1.0.45";
         edition = "2021";
-        sha256 = "1r7c7hxl66vz3q9qizgjhy77pdrrypqgk4ghc7260xvvfb7ypci1";
+        sha256 = "095rb5rg7pbnwdp6v8w5jw93wndwyijgci1b5lw8j1h5cscn3wj1";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -1651,9 +1651,9 @@ rec {
       };
       "rustix" = rec {
         crateName = "rustix";
-        version = "1.1.3";
+        version = "1.1.4";
         edition = "2021";
-        sha256 = "0d0z2zcw4rwzni1hm8snw8xdxwwrij336m31c4ghq66cghj9wv0l";
+        sha256 = "14511f9yjqh0ix07xjrjpllah3325774gfwi9zpq72sip5jlbzmn";
         authors = [
           "Dan Gohman <dev@sunfishcode.online>"
           "Jakub Konka <kubkon@jakubkonka.com>"
@@ -2034,9 +2034,9 @@ rec {
       };
       "serde_with" = rec {
         crateName = "serde_with";
-        version = "3.16.1";
+        version = "3.17.0";
         edition = "2021";
-        sha256 = "1rz2824yhfn5n5vxmnnk01x7d3xrf2122jinw0wd4h3lh3r3g8jg";
+        sha256 = "1ff3pzf4dyxl9pv2ffv35djk6rnks1czp5ijj1nlfsxwwwy2h6rq";
         authors = [
           "Jonas Bushart"
           "Marcin Kaźmierczak"
@@ -2161,9 +2161,9 @@ rec {
       };
       "serde_with_macros" = rec {
         crateName = "serde_with_macros";
-        version = "3.16.1";
+        version = "3.17.0";
         edition = "2021";
-        sha256 = "0v3hfn474ny4as1gwvqgrhjzk9p5959gjl5bf0gi4ad61k5f7a2j";
+        sha256 = "1q17icvf0mcl752my58fx9is9jgf4f2cl7dbsrp31jy8fc2y7m56";
         procMacro = true;
         authors = [
           "Jonas Bushart"
@@ -2480,9 +2480,9 @@ rec {
       };
       "wasm-bindgen" = rec {
         crateName = "wasm-bindgen";
-        version = "0.2.111";
+        version = "0.2.114";
         edition = "2021";
-        sha256 = "1b6qxm8wps17izn08b9xhiz1swzx38mpj5zq4iw5nbv76laxy6pc";
+        sha256 = "13nkhw552hpllrrmkd2x9y4bmcxr82kdpky2n667kqzcq6jzjck5";
         libName = "wasm_bindgen";
         authors = [
           "The wasm-bindgen Developers"
@@ -2531,9 +2531,9 @@ rec {
       };
       "wasm-bindgen-macro" = rec {
         crateName = "wasm-bindgen-macro";
-        version = "0.2.111";
+        version = "0.2.114";
         edition = "2021";
-        sha256 = "1cdk8sjmzzsvlzpz8pv9aj4m8l0l16ibklnlmriidch8ghqkirhr";
+        sha256 = "1rhq9kkl7n0zjrag9p25xsi4aabpgfkyf02zn4xv6pqhrw7xb8hq";
         procMacro = true;
         libName = "wasm_bindgen_macro";
         authors = [
@@ -2555,9 +2555,9 @@ rec {
       };
       "wasm-bindgen-macro-support" = rec {
         crateName = "wasm-bindgen-macro-support";
-        version = "0.2.111";
+        version = "0.2.114";
         edition = "2021";
-        sha256 = "1bq2j60bajjf4ldsbflgsc0izwc8r5pyjmslyvah6k8ia047cr1c";
+        sha256 = "1qriqqjpn922kv5c7f7627fj823k5aifv06j2gvwsiy5map4rkh3";
         libName = "wasm_bindgen_macro_support";
         authors = [
           "The wasm-bindgen Developers"
@@ -2591,10 +2591,10 @@ rec {
       };
       "wasm-bindgen-shared" = rec {
         crateName = "wasm-bindgen-shared";
-        version = "0.2.111";
+        version = "0.2.114";
         edition = "2021";
         links = "wasm_bindgen";
-        sha256 = "0hfa42772ycq8b180w6k7ax8jn246r50pc4y6fiwyxv1w97wvvk0";
+        sha256 = "05lc6w64jxlk4wk8rjci4z61lhx2ams90la27a41gvi3qaw2d8vm";
         libName = "wasm_bindgen_shared";
         authors = [
           "The wasm-bindgen Developers"
@@ -2609,9 +2609,9 @@ rec {
       };
       "wayland-backend" = rec {
         crateName = "wayland-backend";
-        version = "0.3.12";
+        version = "0.3.14";
         edition = "2021";
-        sha256 = "1yb4s5mbcis3z3gcmxq2lzgrcw2li7jsfr9ayi4gcsyrrja43rpy";
+        sha256 = "01m4qv2fwc8knxnlh3v9xzgcwm56kf9wsirzigbbq6gpnw0g8xda";
         libName = "wayland_backend";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2645,6 +2645,9 @@ rec {
         features = {
           "client_system" = [ "wayland-sys/client" "dep:scoped-tls" ];
           "dlopen" = [ "wayland-sys/dlopen" ];
+          "libwayland_client_1_23" = [ "wayland-sys/libwayland_client_1_23" ];
+          "libwayland_server_1_22" = [ "wayland-sys/libwayland_server_1_22" ];
+          "libwayland_server_1_23" = [ "wayland-sys/libwayland_server_1_23" "libwayland_server_1_22" ];
           "log" = [ "dep:log" ];
           "raw-window-handle" = [ "dep:raw-window-handle" ];
           "rwh_06" = [ "dep:rwh_06" ];
@@ -2653,9 +2656,9 @@ rec {
       };
       "wayland-client" = rec {
         crateName = "wayland-client";
-        version = "0.31.12";
+        version = "0.31.13";
         edition = "2021";
-        sha256 = "1v1b2b2s0ld41psn3v2p3c6i590iz3r427czrf3c3dpv6yjzmrmq";
+        sha256 = "1hqnyn637ldfgbwkbf2v0d452lwy951bgqh7c3kyxaviq3vxjldb";
         libName = "wayland_client";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2680,14 +2683,17 @@ rec {
           }
         ];
         features = {
+          "dlopen" = [ "wayland-backend/dlopen" ];
+          "libwayland_1_23" = [ "wayland-backend/libwayland_client_1_23" ];
           "log" = [ "dep:log" ];
+          "system" = [ "wayland-backend/client_system" ];
         };
       };
       "wayland-protocols" = rec {
         crateName = "wayland-protocols";
-        version = "0.32.10";
+        version = "0.32.11";
         edition = "2021";
-        sha256 = "1wzl7ly3ahi2y4swf8wmlqaj3gck4fpmwf6ymbfxd37wpkzskvds";
+        sha256 = "1ixfqjimafldmkagmj4hizshqdmssn8paq5c0s7k5wgg3krmsfxj";
         libName = "wayland_protocols";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2721,9 +2727,9 @@ rec {
       };
       "wayland-protocols-wlr" = rec {
         crateName = "wayland-protocols-wlr";
-        version = "0.3.10";
+        version = "0.3.11";
         edition = "2021";
-        sha256 = "1ws5fd7qs5vf3digbnn20n7mks2sdg76sy13b36k836g0bgpqng9";
+        sha256 = "0db2ils5zvx2xhkbi1m5jws1zbnw6231ap5sf0ridy7gq168w93q";
         libName = "wayland_protocols_wlr";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2761,9 +2767,9 @@ rec {
       };
       "wayland-scanner" = rec {
         crateName = "wayland-scanner";
-        version = "0.31.8";
+        version = "0.31.9";
         edition = "2021";
-        sha256 = "1qw971z9jcxdw8s371gx2anmwb95m59y38q3k11qxrk3d95yj8sl";
+        sha256 = "1qx4ky8sn95qkk45fnghdaas4j508mrrnw6a46w9k5rh38aqfqn8";
         procMacro = true;
         libName = "wayland_scanner";
         authors = [
@@ -2787,9 +2793,9 @@ rec {
       };
       "wayland-sys" = rec {
         crateName = "wayland-sys";
-        version = "0.31.8";
+        version = "0.31.10";
         edition = "2021";
-        sha256 = "1zdxrcl8paklwir0lag1i80k6h0iq1f80d925b4p9yaymk1vyv8y";
+        sha256 = "05wdafyvckjadsnlv4k415izyn9vapyqhad3c6abzmp0x1q6nkrp";
         libName = "wayland_sys";
         authors = [
           "Elinor Berger <elinor@safaradeg.net>"
@@ -2806,6 +2812,7 @@ rec {
           "dlopen" = [ "once_cell" ];
           "egl" = [ "client" ];
           "libc" = [ "dep:libc" ];
+          "libwayland_server_1_23" = [ "libwayland_server_1_22" ];
           "memoffset" = [ "dep:memoffset" ];
           "once_cell" = [ "dep:once_cell" ];
           "server" = [ "libc" "memoffset" "dep:dlib" "dep:log" ];

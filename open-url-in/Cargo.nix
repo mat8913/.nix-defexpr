@@ -196,9 +196,9 @@ rec {
       };
       "cfg-expr" = rec {
         crateName = "cfg-expr";
-        version = "0.20.6";
+        version = "0.20.7";
         edition = "2024";
-        sha256 = "0smbxbd39s2kpmz6r9yg4xmh0wx5d1in6amf49rpr0m6l6szbkkq";
+        sha256 = "0s4k51p520dk6l5vl08rzv13qc1bk9nm80xcsi71b040gph08srw";
         libName = "cfg_expr";
         authors = [
           "Embark <opensource@embark-studios.com>"
@@ -1387,9 +1387,9 @@ rec {
       };
       "libc" = rec {
         crateName = "libc";
-        version = "0.2.182";
+        version = "0.2.183";
         edition = "2021";
-        sha256 = "04k1w1mq9f4cxv520dbr5xw1i7xkbc9fcrvaggyjy25jdkdvl038";
+        sha256 = "17c9gyia7rrzf9gsssvk3vq9ca2jp6rh32fsw6ciarpn5djlddmm";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1542,9 +1542,9 @@ rec {
       };
       "pin-project-lite" = rec {
         crateName = "pin-project-lite";
-        version = "0.2.16";
+        version = "0.2.17";
         edition = "2018";
-        sha256 = "16wzc7z7dfkf9bmjin22f5282783f6mdksnr0nv0j5ym5f9gyg1v";
+        sha256 = "1kfmwvs271si96zay4mm8887v5khw0c27jc9srw1a75ykvgj54x8";
         libName = "pin_project_lite";
 
       };
@@ -1561,9 +1561,9 @@ rec {
       };
       "proc-macro-crate" = rec {
         crateName = "proc-macro-crate";
-        version = "3.4.0";
+        version = "3.5.0";
         edition = "2021";
-        sha256 = "10v9qi51n4phn1lrj5r94kjq7yhci9jrkqnn6wpan05yjsgb3711";
+        sha256 = "0kv1g1d1zjwxlgcaba2qlshzyy32j03xic8rskqlcr5mnblsfyz6";
         libName = "proc_macro_crate";
         authors = [
           "Bastian Köcher <git@kchr.de>"
@@ -1601,9 +1601,9 @@ rec {
       };
       "quote" = rec {
         crateName = "quote";
-        version = "1.0.44";
+        version = "1.0.45";
         edition = "2021";
-        sha256 = "1r7c7hxl66vz3q9qizgjhy77pdrrypqgk4ghc7260xvvfb7ypci1";
+        sha256 = "095rb5rg7pbnwdp6v8w5jw93wndwyijgci1b5lw8j1h5cscn3wj1";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -1875,7 +1875,7 @@ rec {
           }
           {
             name = "toml_datetime";
-            packageId = "toml_datetime";
+            packageId = "toml_datetime 0.7.5+spec-1.1.0";
             usesDefaultFeatures = false;
             features = [ "alloc" ];
           }
@@ -1912,7 +1912,7 @@ rec {
         };
         resolvedDefaultFeatures = [ "parse" "std" ];
       };
-      "toml_datetime" = rec {
+      "toml_datetime 0.7.5+spec-1.1.0" = rec {
         crateName = "toml_datetime";
         version = "0.7.5+spec-1.1.0";
         edition = "2021";
@@ -1931,13 +1931,34 @@ rec {
           "serde" = [ "dep:serde_core" ];
           "std" = [ "alloc" "serde_core?/std" ];
         };
+        resolvedDefaultFeatures = [ "alloc" "std" ];
+      };
+      "toml_datetime 1.0.0+spec-1.1.0" = rec {
+        crateName = "toml_datetime";
+        version = "1.0.0+spec-1.1.0";
+        edition = "2021";
+        sha256 = "0gpiaddhignli6whj52ysjxwmmy82r8qxihckzss8y4md5f5bhij";
+        dependencies = [
+          {
+            name = "serde_core";
+            packageId = "serde_core";
+            optional = true;
+            usesDefaultFeatures = false;
+          }
+        ];
+        features = {
+          "alloc" = [ "serde_core?/alloc" ];
+          "default" = [ "std" ];
+          "serde" = [ "dep:serde_core" ];
+          "std" = [ "alloc" "serde_core?/std" ];
+        };
         resolvedDefaultFeatures = [ "alloc" "default" "std" ];
       };
       "toml_edit" = rec {
         crateName = "toml_edit";
-        version = "0.23.10+spec-1.0.0";
+        version = "0.25.4+spec-1.1.0";
         edition = "2021";
-        sha256 = "0saj5c676j8a3sqaj9akkp09wambg8aflji4zblwwa70azvvkj44";
+        sha256 = "1whkik77grpr5qw8q0zhqx1admghpkdm2hzm6xh9dp2krv8cp4vi";
         dependencies = [
           {
             name = "indexmap";
@@ -1946,7 +1967,7 @@ rec {
           }
           {
             name = "toml_datetime";
-            packageId = "toml_datetime";
+            packageId = "toml_datetime 1.0.0+spec-1.1.0";
           }
           {
             name = "toml_parser";
@@ -2293,9 +2314,9 @@ rec {
       };
       "winnow" = rec {
         crateName = "winnow";
-        version = "0.7.14";
+        version = "0.7.15";
         edition = "2021";
-        sha256 = "0a88ahjqhyn2ln1yplq2xsigm09kxqkdkkk2c2mfxkbzszln8lss";
+        sha256 = "0i9rkl2rqpbnnxlgs20gmkj3nd0b2k8q55mjmpc2ybb84xwxjyfz";
         dependencies = [
           {
             name = "memchr";
