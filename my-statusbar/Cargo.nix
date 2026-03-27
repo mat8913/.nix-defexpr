@@ -199,9 +199,9 @@ rec {
       };
       "cc" = rec {
         crateName = "cc";
-        version = "1.2.56";
+        version = "1.2.57";
         edition = "2018";
-        sha256 = "1chvh9g2izhqad7vzy4cc7xpdljdvqpsr6x6hv1hmyqv3mlkbgxf";
+        sha256 = "08q464b62d03zm7rgiixavkrh5lzfq18lwf884vgycj9735d23bs";
         authors = [
           "Alex Crichton <alex@alexcrichton.com>"
         ];
@@ -326,9 +326,9 @@ rec {
       };
       "darling" = rec {
         crateName = "darling";
-        version = "0.21.3";
+        version = "0.23.0";
         edition = "2021";
-        sha256 = "1h281ah78pz05450r71h3gwm2n24hy8yngbz58g426l4j1q37pww";
+        sha256 = "179fj6p6ajw4dnkrik51wjhifxwy02x5zhligyymcb905zd17bi5";
         authors = [
           "Ted Driggs <ted.driggs@outlook.com>"
         ];
@@ -352,17 +352,13 @@ rec {
       };
       "darling_core" = rec {
         crateName = "darling_core";
-        version = "0.21.3";
+        version = "0.23.0";
         edition = "2021";
-        sha256 = "193ya45qgac0a4siwghk0bl8im8h89p3cald7kw8ag3yrmg1jiqj";
+        sha256 = "1c033vrks38vpw8kwgd5w088dsr511kfz55n9db56prkgh7sarcq";
         authors = [
           "Ted Driggs <ted.driggs@outlook.com>"
         ];
         dependencies = [
-          {
-            name = "fnv";
-            packageId = "fnv";
-          }
           {
             name = "ident_case";
             packageId = "ident_case";
@@ -395,9 +391,9 @@ rec {
       };
       "darling_macro" = rec {
         crateName = "darling_macro";
-        version = "0.21.3";
+        version = "0.23.0";
         edition = "2021";
-        sha256 = "10ac85n4lnx3rmf5rw8lijl2c0sbl6ghcpgfmzh0s26ihbghi0yk";
+        sha256 = "13fvzji9xyp304mgq720z5l0xgm54qj68jibwscagkynggn88fdc";
         procMacro = true;
         authors = [
           "Ted Driggs <ted.driggs@outlook.com>"
@@ -678,20 +674,6 @@ rec {
           "default" = [ "std" ];
           "serde" = [ "dep:serde" ];
         };
-      };
-      "fnv" = rec {
-        crateName = "fnv";
-        version = "1.0.7";
-        edition = "2015";
-        sha256 = "1hc2mcqha06aibcaza94vbi81j6pr9a1bbxrxjfhc91zin8yr7iz";
-        libPath = "lib.rs";
-        authors = [
-          "Alex Crichton <alex@alexcrichton.com>"
-        ];
-        features = {
-          "default" = [ "std" ];
-        };
-        resolvedDefaultFeatures = [ "default" "std" ];
       };
       "foldhash" = rec {
         crateName = "foldhash";
@@ -1271,9 +1253,9 @@ rec {
       };
       "num-conv" = rec {
         crateName = "num-conv";
-        version = "0.1.0";
+        version = "0.2.0";
         edition = "2021";
-        sha256 = "1ndiyg82q73783jq18isi71a7mjh56wxrk52rlvyx0mi5z9ibmai";
+        sha256 = "0l4hj7lp8zbb9am4j3p7vlcv47y9bbazinvnxx9zjhiwkibyr5yg";
         libName = "num_conv";
         authors = [
           "Jacob Pratt <jacob@jhpratt.dev>"
@@ -1324,9 +1306,9 @@ rec {
       };
       "once_cell" = rec {
         crateName = "once_cell";
-        version = "1.21.3";
+        version = "1.21.4";
         edition = "2021";
-        sha256 = "0b9x77lb9f1j6nqgf5aka4s2qj0nly176bpbrv6f9iakk5ff3xa2";
+        sha256 = "0l1v676wf71kjg2khch4dphwh1jp3291ffiymr2mvy1kxd5kwz4z";
         authors = [
           "Aleksey Kladov <aleksey.kladov@gmail.com>"
         ];
@@ -1421,9 +1403,9 @@ rec {
       };
       "platforms" = rec {
         crateName = "platforms";
-        version = "3.8.0";
+        version = "3.9.0";
         edition = "2018";
-        sha256 = "03i9hp6c484743dzi76i1cp15idvk22dyfg6wzwbxzrnqj1zqim5";
+        sha256 = "0ignldrh7x7y8scb2ldlx9lvll5d772jsv2s10nl29z9k5hg4bx2";
         authors = [
           "Tony Arcieri <bascule@gmail.com>"
           "Sergey \"Shnatsel\" Davidoff <shnatsel@gmail.com>"
@@ -2034,9 +2016,9 @@ rec {
       };
       "serde_with" = rec {
         crateName = "serde_with";
-        version = "3.17.0";
+        version = "3.18.0";
         edition = "2021";
-        sha256 = "1ff3pzf4dyxl9pv2ffv35djk6rnks1czp5ijj1nlfsxwwwy2h6rq";
+        sha256 = "07yhc7g7cmcsv02dxc8338ajcvldmr81li5wsnypv476v3x18m6x";
         authors = [
           "Jonas Bushart"
           "Marcin Kaźmierczak"
@@ -2161,9 +2143,9 @@ rec {
       };
       "serde_with_macros" = rec {
         crateName = "serde_with_macros";
-        version = "3.17.0";
+        version = "3.18.0";
         edition = "2021";
-        sha256 = "1q17icvf0mcl752my58fx9is9jgf4f2cl7dbsrp31jy8fc2y7m56";
+        sha256 = "0rgb0jsbczmvd4rpmfn1pa0axp5bv6grc4g2axrzxw88wrw8knyk";
         procMacro = true;
         authors = [
           "Jonas Bushart"
@@ -2319,9 +2301,9 @@ rec {
       };
       "time" = rec {
         crateName = "time";
-        version = "0.3.45";
-        edition = "2021";
-        sha256 = "1gdag88agck220k6fxbgb7gsnr2r14n33sxzm5db9zfp6gy45r7r";
+        version = "0.3.47";
+        edition = "2024";
+        sha256 = "0b7g9ly2iabrlgizliz6v5x23yq5d6bpp0mqz6407z1s526d8fvl";
         authors = [
           "Jacob Pratt <open-source@jhpratt.dev>"
           "Time contributors"
@@ -2376,7 +2358,7 @@ rec {
           "alloc" = [ "serde_core?/alloc" ];
           "default" = [ "std" ];
           "formatting" = [ "dep:itoa" "std" "time-macros?/formatting" ];
-          "large-dates" = [ "time-macros?/large-dates" ];
+          "large-dates" = [ "time-core/large-dates" "time-macros?/large-dates" ];
           "local-offset" = [ "std" "dep:libc" "dep:num_threads" ];
           "macros" = [ "dep:time-macros" ];
           "parsing" = [ "time-macros?/parsing" ];
@@ -2394,21 +2376,22 @@ rec {
       };
       "time-core" = rec {
         crateName = "time-core";
-        version = "0.1.7";
-        edition = "2021";
-        sha256 = "1jilglvr6m6h2iidnvdp3zfahck9wa7kw64rslk79v1izncfwdlb";
+        version = "0.1.8";
+        edition = "2024";
+        sha256 = "1jidl426mw48i7hjj4hs9vxgd9lwqq4vyalm4q8d7y4iwz7y353n";
         libName = "time_core";
         authors = [
           "Jacob Pratt <open-source@jhpratt.dev>"
           "Time contributors"
         ];
-
+        features = {
+        };
       };
       "time-macros" = rec {
         crateName = "time-macros";
-        version = "0.2.25";
-        edition = "2021";
-        sha256 = "1pg3zrqyvjcy1nh470mdw7qxwwq6zmwq3f1dlp11mxlv4k8m5rbi";
+        version = "0.2.27";
+        edition = "2024";
+        sha256 = "058ja265waq275wxvnfwavbz9r1hd4dgwpfn7a1a9a70l32y8w1f";
         procMacro = true;
         libName = "time_macros";
         authors = [
