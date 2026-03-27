@@ -15,12 +15,6 @@ packageOverrides = pkgs: rec {
     }
   );
 
-  ranger = pkgs.ranger.overrideAttrs (
-    finalAttrs: previousAttrs: {
-      patches = (previousAttrs.patches or []) ++ [ ./ranger-patches/fix-bulkrename.patch ];
-    }
-  );
-
   mpv = pkgs.mpv-unwrapped.wrapper {
     mpv = pkgs.mpv-unwrapped;
 
