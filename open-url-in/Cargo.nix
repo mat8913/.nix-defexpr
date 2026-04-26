@@ -96,9 +96,9 @@ rec {
       };
       "bitflags" = rec {
         crateName = "bitflags";
-        version = "2.11.0";
+        version = "2.11.1";
         edition = "2021";
-        sha256 = "1bwjibwry5nfwsfm9kjg2dqx5n5nja9xymwbfl6svnn8jsz6ff44";
+        sha256 = "1cvqijg3rvwgis20a66vfdxannjsxfy5fgjqkaq3l13gyfcj4lf4";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1331,9 +1331,9 @@ rec {
       };
       "hashbrown" = rec {
         crateName = "hashbrown";
-        version = "0.16.1";
-        edition = "2021";
-        sha256 = "004i3njw38ji3bzdp9z178ba9x3k0c1pgy8x69pj7yfppv4iq7c4";
+        version = "0.17.0";
+        edition = "2024";
+        sha256 = "0l8gvcz80lvinb7x22h53cqbi2y1fm603y2jhhh9qwygvkb7sijg";
         authors = [
           "Amanieu d'Antras <amanieu@gmail.com>"
         ];
@@ -1359,9 +1359,9 @@ rec {
       };
       "indexmap" = rec {
         crateName = "indexmap";
-        version = "2.13.0";
-        edition = "2021";
-        sha256 = "05qh5c4h2hrnyypphxpwflk45syqbzvqsvvyxg43mp576w2ff53p";
+        version = "2.14.0";
+        edition = "2024";
+        sha256 = "1na9z6f0d5pkjr1lgsni470v98gv2r7c41j8w48skr089x2yjrnl";
         dependencies = [
           {
             name = "equivalent";
@@ -1387,9 +1387,9 @@ rec {
       };
       "libc" = rec {
         crateName = "libc";
-        version = "0.2.183";
+        version = "0.2.186";
         edition = "2021";
-        sha256 = "17c9gyia7rrzf9gsssvk3vq9ca2jp6rh32fsw6ciarpn5djlddmm";
+        sha256 = "0rnyhzjyqq9x56skkllbjzzzwym3r61lq3l4hqj64v71gw0r3av8";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1550,9 +1550,9 @@ rec {
       };
       "pkg-config" = rec {
         crateName = "pkg-config";
-        version = "0.3.32";
+        version = "0.3.33";
         edition = "2018";
-        sha256 = "0k4h3gnzs94sjb2ix6jyksacs52cf1fanpwsmlhjnwrdnp8dppby";
+        sha256 = "17jnqmcbxsnwhg9gjf0nh6dj5k0x3hgwi3mb9krjnmfa9v435w8r";
         libName = "pkg_config";
         authors = [
           "Alex Crichton <alex@alexcrichton.com>"
@@ -1635,9 +1635,9 @@ rec {
       };
       "semver" = rec {
         crateName = "semver";
-        version = "1.0.27";
-        edition = "2018";
-        sha256 = "1qmi3akfrnqc2hfkdgcxhld5bv961wbk8my3ascv5068mc5fnryp";
+        version = "1.0.28";
+        edition = "2021";
+        sha256 = "1kaimrpy876bcgi8bfj0qqfxk77zm9iz2zhn1hp9hj685z854y4a";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -1710,9 +1710,9 @@ rec {
       };
       "serde_spanned" = rec {
         crateName = "serde_spanned";
-        version = "1.1.0";
+        version = "1.1.1";
         edition = "2024";
-        sha256 = "166ds31qqkc70k28pspiknnpkvqaxdln6aq3n4mqhkqd0r8w6sl7";
+        sha256 = "09jzk7i6wihn3d8i3wi4j4n98ghi93c3b8m8k64nxq0ijn3vaqk6";
         dependencies = [
           {
             name = "serde_core";
@@ -1798,9 +1798,9 @@ rec {
       };
       "system-deps" = rec {
         crateName = "system-deps";
-        version = "7.0.7";
+        version = "7.0.8";
         edition = "2018";
-        sha256 = "0zsyh2m893nqkp1wri5c85favp2xyl1qpjxnd5nz31pr6qvz7j28";
+        sha256 = "1rwnfw9dm6ck65a7lfjfpn2c91gwj88brz2i09z3fdbknvz3asir";
         libName = "system_deps";
         authors = [
           "Guillaume Desmottes <guillaume.desmottes@collabora.com>"
@@ -1850,9 +1850,9 @@ rec {
       };
       "toml" = rec {
         crateName = "toml";
-        version = "0.9.12+spec-1.1.0";
-        edition = "2021";
-        sha256 = "0qwqbrymqn88mg2yqyq3rj52z6p20448z0jxdbpjsbpwg5g894ng";
+        version = "1.1.2+spec-1.1.0";
+        edition = "2024";
+        sha256 = "1vpggpamqhw4852kic7465zsidczsla06wz6friqkkfbhigd3ww1";
         dependencies = [
           {
             name = "indexmap";
@@ -1875,7 +1875,7 @@ rec {
           }
           {
             name = "toml_datetime";
-            packageId = "toml_datetime 0.7.5+spec-1.1.0";
+            packageId = "toml_datetime";
             usesDefaultFeatures = false;
             features = [ "alloc" ];
           }
@@ -1895,7 +1895,7 @@ rec {
           }
           {
             name = "winnow";
-            packageId = "winnow 0.7.15";
+            packageId = "winnow";
             optional = true;
             usesDefaultFeatures = false;
           }
@@ -1912,32 +1912,11 @@ rec {
         };
         resolvedDefaultFeatures = [ "parse" "std" ];
       };
-      "toml_datetime 0.7.5+spec-1.1.0" = rec {
+      "toml_datetime" = rec {
         crateName = "toml_datetime";
-        version = "0.7.5+spec-1.1.0";
-        edition = "2021";
-        sha256 = "0iqkgvgsxmszpai53dbip7sf2igic39s4dby29dbqf1h9bnwzqcj";
-        dependencies = [
-          {
-            name = "serde_core";
-            packageId = "serde_core";
-            optional = true;
-            usesDefaultFeatures = false;
-          }
-        ];
-        features = {
-          "alloc" = [ "serde_core?/alloc" ];
-          "default" = [ "std" ];
-          "serde" = [ "dep:serde_core" ];
-          "std" = [ "alloc" "serde_core?/std" ];
-        };
-        resolvedDefaultFeatures = [ "alloc" "std" ];
-      };
-      "toml_datetime 1.1.0+spec-1.1.0" = rec {
-        crateName = "toml_datetime";
-        version = "1.1.0+spec-1.1.0";
+        version = "1.1.1+spec-1.1.0";
         edition = "2024";
-        sha256 = "13qrb6d5cnsq5gm7b7v081vhddhzx2km51safy1ss0vy65y1l9cp";
+        sha256 = "1mws2mkkf46l7inn77azhm0vdwxngv9vsbhbl0ah33p2c9gzcr9i";
         dependencies = [
           {
             name = "serde_core";
@@ -1956,9 +1935,9 @@ rec {
       };
       "toml_edit" = rec {
         crateName = "toml_edit";
-        version = "0.25.8+spec-1.1.0";
+        version = "0.25.11+spec-1.1.0";
         edition = "2024";
-        sha256 = "0g0zdxh1wawc0v3hch7lpli2admvsww6hzk4y2gpzi463n7z7gqn";
+        sha256 = "0awzffbkx33v9x4h19b5mfrwp3sn4ifr16y58sbk6j6l5v9c8n8b";
         dependencies = [
           {
             name = "indexmap";
@@ -1967,7 +1946,7 @@ rec {
           }
           {
             name = "toml_datetime";
-            packageId = "toml_datetime 1.1.0+spec-1.1.0";
+            packageId = "toml_datetime";
           }
           {
             name = "toml_parser";
@@ -1976,7 +1955,7 @@ rec {
           }
           {
             name = "winnow";
-            packageId = "winnow 1.0.0";
+            packageId = "winnow";
             optional = true;
           }
         ];
@@ -1991,13 +1970,13 @@ rec {
       };
       "toml_parser" = rec {
         crateName = "toml_parser";
-        version = "1.1.0+spec-1.1.0";
+        version = "1.1.2+spec-1.1.0";
         edition = "2024";
-        sha256 = "04a0pfm9hp18mhk2lrm85fkia5ya2f5grf7r9nq7wq33wcgg2d13";
+        sha256 = "09kmzc55a0j21whm290wlf5a8b18a0qc87a1s8sncrckc6wfkax2";
         dependencies = [
           {
             name = "winnow";
-            packageId = "winnow 1.0.0";
+            packageId = "winnow";
             usesDefaultFeatures = false;
           }
         ];
@@ -2011,9 +1990,9 @@ rec {
       };
       "toml_writer" = rec {
         crateName = "toml_writer";
-        version = "1.1.0+spec-1.1.0";
+        version = "1.1.1+spec-1.1.0";
         edition = "2024";
-        sha256 = "1vgq92b1j95n3jmk44mbdl2y8wy0l2xynmqywkrzl4k307kav0nj";
+        sha256 = "1nwjhvvrxz8f4ck1qi4xcz2x9qhpci37nrknhxxf9sqk22dsyvbm";
         features = {
           "default" = [ "std" ];
           "std" = [ "alloc" ];
@@ -2312,24 +2291,11 @@ rec {
         };
         resolvedDefaultFeatures = [ "Win32" "Win32_Foundation" "Win32_Networking" "Win32_Networking_WinSock" "default" ];
       };
-      "winnow 0.7.15" = rec {
+      "winnow" = rec {
         crateName = "winnow";
-        version = "0.7.15";
+        version = "1.0.2";
         edition = "2021";
-        sha256 = "0i9rkl2rqpbnnxlgs20gmkj3nd0b2k8q55mjmpc2ybb84xwxjyfz";
-        features = {
-          "debug" = [ "std" "dep:anstream" "dep:anstyle" "dep:is_terminal_polyfill" "dep:terminal_size" ];
-          "default" = [ "std" ];
-          "simd" = [ "dep:memchr" ];
-          "std" = [ "alloc" "memchr?/std" ];
-          "unstable-doc" = [ "alloc" "std" "simd" "unstable-recover" ];
-        };
-      };
-      "winnow 1.0.0" = rec {
-        crateName = "winnow";
-        version = "1.0.0";
-        edition = "2021";
-        sha256 = "1n67gx8mg2b6r2z54zwbrb6qsfbdsar1lvafsfaajr3jcvj8h3m9";
+        sha256 = "1l7xnfvlgy4da6gq5ip2bgcm8i9d0rwzaxg1p88nlw8lxy5p1q9f";
         dependencies = [
           {
             name = "memchr";
