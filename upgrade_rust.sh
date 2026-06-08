@@ -12,9 +12,9 @@ patch <<EOF
 -{ nixpkgs ? <nixpkgs>
 -, pkgs ? import nixpkgs { config = {}; }
 +{ pkgs
+ , fetchurl ? pkgs.fetchurl
  , lib ? pkgs.lib
  , stdenv ? pkgs.stdenv
- , buildRustCrateForPkgs ? pkgs: pkgs.buildRustCrate
 EOF
 }
 
