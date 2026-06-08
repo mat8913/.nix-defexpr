@@ -9,14 +9,19 @@
 
   sourceRoot = "${finalAttrs.src.name}/src/go";
 
-  GOFLAGS = [ "-buildmode=c-shared" ];
-
   vendorHash = "sha256-BDiwXkuM5NobdfmsS4fGpprCEvNxH+qQ/SE2/4hiB08=";
 }))
 # Workaround for https://github.com/NixOS/nixpkgs/issues/379710
+# Workaround for https://github.com/NixOS/nixpkgs/pull/470709#issuecomment-3709321538
 .overrideAttrs (
   finalAttrs: previousAttrs: {
-    buildPhase = lib.replaceString "buildGoDir install" "buildGoDir build" previousAttrs.buildPhase;
+    buildPhase = ''
+      runHook preBuild
+
+      go build -buildmode=c-shared -mod=vendor -trimpath .
+
+      runHook postBuild
+    '';
     installPhase = ''
         mkdir -p "$out"/lib
         cp extern "$out"/lib/libproton_crypto.so

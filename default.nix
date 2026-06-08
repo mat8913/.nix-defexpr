@@ -15,9 +15,7 @@ packageOverrides = pkgs: rec {
     }
   );
 
-  mpv = pkgs.mpv-unwrapped.wrapper {
-    mpv = pkgs.mpv-unwrapped;
-
+  mpv = pkgs.mpv.override {
     scripts = with pkgs.mpvScripts; [
       mpris
       youtube-chat
