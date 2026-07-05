@@ -110,9 +110,9 @@ rec {
       };
       "anyhow" = rec {
         crateName = "anyhow";
-        version = "1.0.102";
+        version = "1.0.103";
         edition = "2021";
-        sha256 = "0b447dra1v12z474c6z4jmicdmc5yxz5bakympdnij44ckw2s83z";
+        sha256 = "1wsav2g6vxcvf2c0fv3jhxfr55l0p2g8nygy7rmmvcsfwgi8ahra";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -1089,9 +1089,9 @@ rec {
       };
       "js-sys" = rec {
         crateName = "js-sys";
-        version = "0.3.102";
+        version = "0.3.103";
         edition = "2021";
-        sha256 = "0cgxklnyrfpzvf32cvdl3x5d070kfsv7ykdxfl3yizwdjqq4rl03";
+        sha256 = "00lib0b6hqmw56r2hjp7xrv730qacslirbkdlhvmi39zvgy4pd2k";
         libName = "js_sys";
         authors = [
           "The wasm-bindgen Developers"
@@ -1155,9 +1155,9 @@ rec {
       };
       "log" = rec {
         crateName = "log";
-        version = "0.4.32";
+        version = "0.4.33";
         edition = "2021";
-        sha256 = "0fmdg0cxig7i4fwf1sw7fmg4d1gdbfzniawcfpwydy1q7320fgwm";
+        sha256 = "1bd9dmk22pxgnf0h0slba6rz99zb0a0b2mdhpk8p92bp26ycbvhc";
         authors = [
           "The Rust Project Developers"
         ];
@@ -1529,9 +1529,9 @@ rec {
       };
       "platforms" = rec {
         crateName = "platforms";
-        version = "3.11.0";
+        version = "3.12.0";
         edition = "2018";
-        sha256 = "0xy9bjh5sjgmsmyivp4kl1pwgk1ysxnsbsv8rm91965qxci9cvrn";
+        sha256 = "1jp66cq9ah2rxbq1s14csp8c4k3zqvhx3xpxfxwxvg56qpkwcicj";
         authors = [
           "Tony Arcieri <bascule@gmail.com>"
           "Sergey \"Shnatsel\" Davidoff <shnatsel@gmail.com>"
@@ -1695,9 +1695,9 @@ rec {
       };
       "quote" = rec {
         crateName = "quote";
-        version = "1.0.45";
+        version = "1.0.46";
         edition = "2021";
-        sha256 = "095rb5rg7pbnwdp6v8w5jw93wndwyijgci1b5lw8j1h5cscn3wj1";
+        sha256 = "0s034glrlav8nzqy2yskqzv52ncy82k126sm2jk5j1vs1iylbg6z";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -2449,9 +2449,9 @@ rec {
       };
       "time" = rec {
         crateName = "time";
-        version = "0.3.49";
+        version = "0.3.53";
         edition = "2024";
-        sha256 = "0sc4dgw6g187gvz5qj9iqqk2ashqzvdwi664b2183gbvsk1566ki";
+        sha256 = "0l4aans0kv47y53736cjs0pnvdz91iyywrkqbrxk6cmrvknsmpqq";
         authors = [
           "Jacob Pratt <open-source@jhpratt.dev>"
           "Time contributors"
@@ -2532,9 +2532,9 @@ rec {
       };
       "time-macros" = rec {
         crateName = "time-macros";
-        version = "0.2.29";
+        version = "0.2.31";
         edition = "2024";
-        sha256 = "0zf1ycfikg93ijf00qnprk801khqnqqga1zp0adbp73sfaim5iki";
+        sha256 = "0pq8y9bm1zr008dmjs62qdfwsigv2kwkga5sj0d4jvk625qvhcf4";
         procMacro = true;
         libName = "time_macros";
         authors = [
@@ -2646,9 +2646,9 @@ rec {
       };
       "wasm-bindgen" = rec {
         crateName = "wasm-bindgen";
-        version = "0.2.125";
+        version = "0.2.126";
         edition = "2021";
-        sha256 = "06nakz7nfy0ymyp7a27wfbjwx69659i12117hkgddkiv2iwkznwd";
+        sha256 = "197rma4qg1kb8l4bl7857pgszzval8s1w740g9myyjh92467q1jb";
         libName = "wasm_bindgen";
         authors = [
           "The wasm-bindgen Developers"
@@ -2697,9 +2697,9 @@ rec {
       };
       "wasm-bindgen-macro" = rec {
         crateName = "wasm-bindgen-macro";
-        version = "0.2.125";
+        version = "0.2.126";
         edition = "2021";
-        sha256 = "0g9w68dwcs4ylm5kxf7schi0kjdfarhc9qlnf8arxc9zn62a28af";
+        sha256 = "1cda6wl5zyiy7777cfgrix7fhpaqba55l5zpqj4zig7ng7jyaz0n";
         procMacro = true;
         libName = "wasm_bindgen_macro";
         authors = [
@@ -2721,9 +2721,9 @@ rec {
       };
       "wasm-bindgen-macro-support" = rec {
         crateName = "wasm-bindgen-macro-support";
-        version = "0.2.125";
+        version = "0.2.126";
         edition = "2021";
-        sha256 = "1gayzdx5iwl8gllh7ys79wg9cf4iyasl9hrzzhh5m4xx6nfgvkpy";
+        sha256 = "03iq412frl2py55skwb3ya08xha0cf6q22zr5kqlwbr675w7r6gk";
         libName = "wasm_bindgen_macro_support";
         authors = [
           "The wasm-bindgen Developers"
@@ -2757,10 +2757,10 @@ rec {
       };
       "wasm-bindgen-shared" = rec {
         crateName = "wasm-bindgen-shared";
-        version = "0.2.125";
+        version = "0.2.126";
         edition = "2021";
         links = "wasm_bindgen";
-        sha256 = "07w7fy5qa14ys3p8v2p84h98yqinw713smibz9v7apcspd29x4r3";
+        sha256 = "097a3kbjls447s1lwr41l21x5crrh5vq3h6zsxccz7slrjq4q6yw";
         libName = "wasm_bindgen_shared";
         authors = [
           "The wasm-bindgen Developers"
