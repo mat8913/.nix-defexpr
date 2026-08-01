@@ -1,6 +1,5 @@
 { buildEnv
 , python3
-, unofficial-pdrive-cli
 , writeScript
 , writeTextDir
 }:
@@ -16,14 +15,7 @@ script = writeScript "backups.py" ''
 service = writeTextDir "/share/systemd/user/backups.service" ''
   [Service]
   ExecStart=${script}
-  Environment="PDRIVE=${unofficial-pdrive-cli}/bin/unofficial-pdrive-cli"
   Type=oneshot
-
-  PrivateUsers=yes
-  PrivateTmp=yes
-  ProtectHome=tmpfs
-  BindReadOnlyPaths=%h/
-  BindPaths=%h/.local/share/unofficial-pdrive-cli
 '';
 
 timer = writeTextDir "/share/systemd/user/backups.timer" ''

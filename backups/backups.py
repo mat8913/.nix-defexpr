@@ -5,14 +5,26 @@ import tempfile
 import time
 
 
-PDRIVE=os.environ["PDRIVE"]
-
-
 def run_backup(src, name, dst):
     with tempfile.TemporaryDirectory() as d:
         tarfile = d + '/' + name + '.tar'
         subprocess.run(["tar", "-cf", tarfile, src], check=True)
-        subprocess.run([PDRIVE, "put", "--enable-sdk-log", "--overwrite", tarfile, dst], check=True)
+        cmd = [
+            "flatpak",
+            "--user",
+            "run",
+            "--file-forwarding",
+            "ch.proton.drive",
+            "filesystem",
+            "upload",
+            "-f",
+            "merge",
+            "@@",
+            tarfile,
+            "@@",
+            dst
+        ]
+        subprocess.run(cmd, check=True)
 
 
 def main():
