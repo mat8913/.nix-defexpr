@@ -109,6 +109,7 @@ pkgs = rec {
 
       ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
       ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+      ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true
     '';
 
     nativeBuildInputs = [
