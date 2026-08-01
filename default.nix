@@ -93,6 +93,7 @@ pkgs = rec {
     [preferred]
     default=gtk
     org.freedesktop.impl.portal.Inhibit=none
+    org.freedesktop.impl.portal.Secret=gnome-keyring
   '';
 
   my-installconf = nixpkgs.stdenvNoCC.mkDerivation {
