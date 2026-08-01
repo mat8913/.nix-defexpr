@@ -64,7 +64,8 @@ let
   connect_headphones = writeScript "connect_headphones" ''
     #!/bin/sh
     HEADPHONES_MAC_ADDR="$(cat ~/.config/headphones_mac_addr)"
-    exec "${bluez}"/bin/bluetoothctl connect "$HEADPHONES_MAC_ADDR"
+    "${bluez}"/bin/bluetoothctl connect "$HEADPHONES_MAC_ADDR" & \
+      exec "${bluez}"/bin/bluetoothctl -t 5 scan on
   '';
 
 in
