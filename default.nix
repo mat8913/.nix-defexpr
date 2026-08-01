@@ -96,6 +96,11 @@ pkgs = rec {
     org.freedesktop.impl.portal.Secret=gnome-keyring
   '';
 
+  my-chromium-flags-conf = nixpkgs.writeTextDir "/etc/chromium-flags.conf" ''
+    --ozone-platform=wayland
+    --enable-features=DbusSecretPortal,SecretPortalKeyProviderUseForEncryption
+  '';
+
   my-installconf = nixpkgs.stdenvNoCC.mkDerivation {
     pname = "installconf";
     version = "1";
@@ -277,6 +282,7 @@ pkgs = rec {
       my-gitconfig
       my-alacrittyconf
       my-xdg-desktop-portals-conf
+      my-chromium-flags-conf
       my-swayconf
       my-statusbar
       my-scripts
