@@ -30,8 +30,6 @@ packageOverrides = pkgs: rec {
     };
     self = python3;
   };
-
-  unofficial-pdrive-cli = (pkgs.callPackage ./unofficial-pdrive-cli { }).unofficial-pdrive-cli;
 };
 
 pkgs = rec {
@@ -243,8 +241,6 @@ pkgs = rec {
 
   backups = nixpkgs.callPackage ./backups {};
 
-  unofficial-pdrive-http-bridge-service = (nixpkgs.callPackage ./unofficial-pdrive-http-bridge { }).service;
-
   userwgns = nixpkgs.callPackage ./userwgns {};
 
   natpmploop = nixpkgs.callPackage ./natpmploop {};
@@ -289,7 +285,6 @@ pkgs = rec {
       my-installconf
       my-swaync
       my-syncthing-service
-      unofficial-pdrive-http-bridge-service
       proton-mount-service
 
       runsway
