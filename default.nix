@@ -102,11 +102,25 @@ pkgs = rec {
     version = "1";
 
     src = nixpkgs.writeShellScriptBin "installconf" ''
+      set -e
+
       mkdir -p ~/.config/alacritty
       ln -sf ../../.nix-profile/etc/alacritty.toml ~/.config/alacritty/
 
       mkdir -p ~/.config/xdg-desktop-portal
       ln -sf ../../.nix-profile/etc/xdg-desktop-portals.conf ~/.config/xdg-desktop-portal/portals.conf
+
+      mkdir -p ~/.config/systemd/user/default.target.wants
+      cd ~/.config/systemd/user/default.target.wants
+      ln -sf ../../../../.nix-profile/share/systemd/user/reset-doc-permissions.service
+      ln -sf ../../../../.nix-profile/share/systemd/user/start-keyring.service
+      ln -sf ../../../../.nix-profile/share/systemd/user/syncthing.service
+      cd -
+
+      mkdir -p ~/.config/systemd/user/timers.target.wants/
+      cd ~/.config/systemd/user/timers.target.wants/
+      ln -sf ../../../../.nix-profile/share/systemd/user/backups.timer
+      cd -
 
       ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
       ${nixpkgs.glib}/bin/gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
