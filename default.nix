@@ -178,6 +178,15 @@ pkgs = rec {
     WantedBy=default.target
   '';
 
+  start-keyring-service = nixpkgs.writeTextDir "/share/systemd/user/start-keyring.service" ''
+    [Service]
+    ExecStart=${nixpkgs.systemd}/bin/busctl --user call org.freedesktop.secrets /org/freedesktop/secrets org.freedesktop.DBus.Peer Ping
+    Type=oneshot
+
+    [Install]
+    WantedBy=default.target
+  '';
+
   my-vim = nixpkgs.vim-full.customize {
     vimrcConfig.customRC = ''
       syntax on
@@ -276,6 +285,7 @@ pkgs = rec {
 
       runsway
       reset-doc-permissions-service
+      start-keyring-service
       open-url-in
       userwgns
       natpmploop
