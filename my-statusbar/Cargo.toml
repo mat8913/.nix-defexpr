@@ -7,13 +7,13 @@ edition = "2024"
 anyhow = "1.0.104"
 byteorder = "1.5.0"
 chrono = "0.4.45"
-libc = "0.2.189"
+libc = "0.2.190"
 netlink-sys = "0.8.8"
 psutil = "5.4.0"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.151"
-serde_with = "3.22.0"
-wl-clipboard-rs = "0.9.3"
+serde_with = "3.24.0"
+wl-clipboard-rs = "0.9.4"
 
 [profile.release]
 panic = 'abort'

@@ -104,9 +104,9 @@ rec {
       };
       "bitflags" = rec {
         crateName = "bitflags";
-        version = "2.13.1";
+        version = "2.13.2";
         edition = "2021";
-        sha256 = "1nl76mpykmwmb8rq1l5vw1azdh1wvxdrnsk4sy3rdrzx01nvg25m";
+        sha256 = "01hbgjwvid66850fzi76mvn5f2bqycx6sf165ng1kfjqq9bl1v9x";
         authors = [
           "The Rust Project Developers"
         ];
@@ -204,9 +204,9 @@ rec {
       };
       "cfg-expr" = rec {
         crateName = "cfg-expr";
-        version = "0.20.9";
+        version = "0.20.10";
         edition = "2024";
-        sha256 = "05z97ah29viw66l3c46y391nfsri9dxpwr166k36dxxmfj2cwkpy";
+        sha256 = "17vc10w7wlw3qhr77g80zn59m3p142vrgy5ihmv04iy42vnfkacv";
         libName = "cfg_expr";
         authors = [
           "Embark <opensource@embark-studios.com>"
@@ -353,7 +353,7 @@ rec {
           }
           {
             name = "syn";
-            packageId = "syn 3.0.4";
+            packageId = "syn 3.0.6";
             features = [ "full" ];
           }
         ];
@@ -1367,9 +1367,9 @@ rec {
       };
       "indexmap" = rec {
         crateName = "indexmap";
-        version = "2.14.1";
+        version = "2.14.2";
         edition = "2024";
-        sha256 = "1sq9z90viwfw8053l32rrby563hy67xl8n6k65d92hi22i421ah7";
+        sha256 = "0mf86hbjkkcd82cpq683bblbs0zwa8ndla96ci8p1ji6bl7ijknc";
         dependencies = [
           {
             name = "equivalent";
@@ -1395,9 +1395,9 @@ rec {
       };
       "libc" = rec {
         crateName = "libc";
-        version = "0.2.189";
+        version = "0.2.190";
         edition = "2021";
-        sha256 = "1whjfs375vlng2q6yrbzs73cvp5lm3w1n2gfqajb2vgf7zg3xbry";
+        sha256 = "0y5yap4bfp7rfsldcbk9pb5alcgygca5xn1n2pmh181zdpf3spff";
         features = {
           "default" = [ "std" ];
           "rustc-dep-of-std" = [ "align" "rustc-std-workspace-core" ];
@@ -1704,7 +1704,7 @@ rec {
           }
           {
             name = "syn";
-            packageId = "syn 3.0.4";
+            packageId = "syn 3.0.6";
             usesDefaultFeatures = false;
             features = [ "clone-impls" "derive" "parsing" "printing" "proc-macro" ];
           }
@@ -1750,9 +1750,9 @@ rec {
       };
       "smallvec" = rec {
         crateName = "smallvec";
-        version = "1.15.2";
+        version = "1.16.2";
         edition = "2018";
-        sha256 = "143wzbqf6vgapdp2z4qpl0yvlqcn17s8cnk8m28rqly808zsdmlf";
+        sha256 = "13iai5hhwyp8z0pbn8r11q4j5956jaxhcbvvf2drm17f1q7myfgr";
         authors = [
           "The Servo Project Developers"
         ];
@@ -1801,11 +1801,11 @@ rec {
         };
         resolvedDefaultFeatures = [ "clone-impls" "default" "derive" "full" "parsing" "printing" "proc-macro" ];
       };
-      "syn 3.0.4" = rec {
+      "syn 3.0.6" = rec {
         crateName = "syn";
-        version = "3.0.4";
+        version = "3.0.6";
         edition = "2021";
-        sha256 = "17v4ac61x0hvj1879ywqzlwhyzg7n9lr9zniwrsif3b1ykfmq9z6";
+        sha256 = "1vmw7s58rzrs926nv5m06x7qbgswm1aa9iw3s1bj5var47kyi4w5";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
         ];
@@ -1888,9 +1888,9 @@ rec {
       };
       "toml" = rec {
         crateName = "toml";
-        version = "1.1.4+spec-1.1.0";
+        version = "1.1.6+spec-1.1.0";
         edition = "2024";
-        sha256 = "1xanf3v10j8hdjz37mkhg80w92cw25kxwndhcp4w5pxw9czydb1s";
+        sha256 = "0sj0g89pyrkm9g5zaaqsdlclr98xf1chvi8jv9qsn4897xa041lj";
         dependencies = [
           {
             name = "indexmap";
@@ -1973,9 +1973,9 @@ rec {
       };
       "toml_edit" = rec {
         crateName = "toml_edit";
-        version = "0.25.13+spec-1.1.0";
+        version = "0.25.15+spec-1.1.0";
         edition = "2024";
-        sha256 = "16xgmjdnxssdpj7rjyimsk4fqbv29g8zl7zhdbc6dxrf9mz3cxb9";
+        sha256 = "0556lgzcvgfy16b8sxskr391s6cbfwnb0r4h5i4k6qw5lnaflh0k";
         dependencies = [
           {
             name = "indexmap";
@@ -2039,9 +2039,9 @@ rec {
       };
       "unicode-ident" = rec {
         crateName = "unicode-ident";
-        version = "1.0.24";
+        version = "1.0.26";
         edition = "2021";
-        sha256 = "0xfs8y1g7syl2iykji8zk5hgfi5jw819f5zsrbaxmlzwsly33r76";
+        sha256 = "0m3915ipi4zz7isncf5k1dz47ys0nq9j7l4l2n2rm03zaxwg8ifj";
         libName = "unicode_ident";
         authors = [
           "David Tolnay <dtolnay@gmail.com>"
