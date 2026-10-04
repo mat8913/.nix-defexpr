@@ -18,7 +18,7 @@ def run_backup(src, name, dst):
             "filesystem",
             "upload",
             "-f",
-            "merge",
+            "create-new-revision",
             "@@",
             tarfile,
             "@@",
